@@ -8,7 +8,7 @@
 #include <SFML/Window.hpp>
 
 using namespace sf;
-using namespace example;
+using namespace MeshLoaderExercise;
 
 int main ()
 {
@@ -41,7 +41,7 @@ int main ()
 
         window.display ();
     }
-    while (not exit);
+    while (!exit);
 
     return 0;
 }

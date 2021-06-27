@@ -85,9 +85,9 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="..\..\code\headers\math.hpp" />
+    <ClInclude Include="..\..\code\headers\Mesh.hpp" />
     <ClInclude Include="..\..\code\headers\Rasterizer.hpp" />
     <ClInclude Include="..\..\code\headers\View.hpp" />
-    <ClInclude Include="Mesh.hpp" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\code\source\main.cpp" />

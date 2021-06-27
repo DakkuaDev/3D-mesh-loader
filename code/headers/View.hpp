@@ -7,69 +7,47 @@
 #ifndef VIEW_HEADER
 #define VIEW_HEADER
 
-    #include <Color_Buffer.hpp>
+#include "Mesh.hpp"
 
-    #include <cstdlib>
-    #include <vector>
+using namespace std;
 
-    #include "math.hpp"
-    #include "Rasterizer.hpp"
+namespace MeshLoaderExercise
+{
 
-    namespace example
+    class Mesh;
+    class View
     {
+    private:
 
-        using  std::vector;
+        //static unsigned width;
+        //static unsigned height;
 
-        using argb::Rgb888;
-        using argb::Color_Buffer;
+        //Mesh* tree_mesh;
 
-        class View
-        {
-        private:
+        int width;
+        int height;
 
-            // Color
-            typedef Color_Buffer< Rgb888 > Color_Buffer;
+    public:
 
-            // Vértices
-            typedef Point4f               Vertex;
-            typedef vector< Vertex >      Vertex_Buffer;
-            typedef vector< Rgb888  >     Vertex_Colors;
 
-            // Índices
-            typedef vector< int    >      Index_Buffer;
+        //static View& getInstance()
+        //{
+        //    static View instance(width, height); // Guaranteed to be destroyed.
+        //                          // Instantiated on first use.
+        //    return instance;
+        //}
 
-        private:
+        View(int _width, int _height);
 
-            //static constexpr char base_file_path[] = "../../shared/assets/";
-            
-            Color_Buffer               color_buffer;
-            Rasterizer< Color_Buffer > rasterizer;
+        void update ();
+        void render ();
 
-            Vertex_Buffer     original_vertices;
-            Vertex_Colors     original_colors;
-            Vertex_Buffer     transformed_vertices;
+    public:
 
-            Index_Buffer      original_indices;
+        inline unsigned get_width() { return width; }
+        inline unsigned get_height() { return height; }       
+    };
 
-            vector< Point4i > display_vertices;
-
-            unsigned width;
-            unsigned height;
-
-        public:
-
-            View(unsigned width, unsigned height);
-
-            void update ();
-            void render ();
-
-        private:
-
-            bool  is_frontface (const Vertex * const projected_vertices, const int * const indices);
-            float rand_clamp   () { return float(rand () & 0xff) * 0.0039215f; }
-
-        };
-
-    }
+}
 
 #endif
