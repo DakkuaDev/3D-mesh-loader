@@ -23,67 +23,74 @@ namespace example
         color_buffer(width, height),
         rasterizer  (color_buffer )
     {
+        const aiScene* scene;
         Assimp::Importer importer;
 
-        auto scene = importer.ReadFile
+        scene = importer.ReadFile
         (
-            mesh_file_path,
+            "../../shared/assets/island.obj",
             aiProcess_Triangulate | aiProcess_JoinIdenticalVertices | aiProcess_SortByPType
         );
 
         // Si scene es un puntero nulo significa que el archivo no se pudo cargar con éxito:
 
+
         if (scene && scene->mNumMeshes > 0)
         {
-            // Para este ejemplo se coge la primera malla solamente:
-
-            auto mesh = scene->mMeshes[0];
-
-            size_t number_of_vertices = mesh->mNumVertices;
-
-            // Se copian los datos de coordenadas de vértices:
-
-            original_vertices.resize (number_of_vertices);
-
-            for (size_t index = 0; index < number_of_vertices; index++)
+            int i = 0;
+            for (auto actual_mesh = scene->mMeshes[0]; i < scene->mNumMeshes; i++)
             {
-                auto & vertex = mesh->mVertices[index];
+                // Se obtiene la malla
+                auto mesh = scene->mMeshes[i];
 
-                original_vertices[index] = Vertex(vertex.x, -vertex.y, vertex.z, 1.f);
+                size_t number_of_vertices = mesh->mNumVertices;
+
+                // Se copian los datos de coordenadas de vértices:
+
+                original_vertices.resize (number_of_vertices);
+
+                for (size_t index = 0; index < number_of_vertices; index++)
+                {
+                    auto & vertex = mesh->mVertices[index];
+
+                    original_vertices[index] = Vertex(vertex.x, -vertex.y, vertex.z, 1.f);
+                }
+
+                transformed_vertices.resize (number_of_vertices);
+                    display_vertices.resize (number_of_vertices);
+
+                // Se inicializan los datos de color de los vértices con colores aleatorios:
+
+                original_colors.resize (number_of_vertices);
+
+                for (size_t index = 0; index < number_of_vertices; index++)
+                {
+                    original_colors[index].set (rand_clamp (), rand_clamp (), rand_clamp ());
+                    //original_colors[index].set(186, 186, 186);
+                }
+
+                // Se generan los índices de los triángulos:
+
+                size_t number_of_triangles = mesh->mNumFaces;
+
+                original_indices.resize (number_of_triangles * 3);
+
+                Index_Buffer::iterator indices_iterator = original_indices.begin ();
+
+                for (size_t index = 0; index < number_of_triangles; index++)
+                {
+                    auto & face = mesh->mFaces[index];
+
+                    assert(face.mNumIndices == 3);              // Una face puede llegar a tener de 1 a 4 índices,
+                                                                // pero nos interesa que solo haya triángulos
+                    auto indices = face.mIndices;
+
+                    *indices_iterator++ = int(indices[0]);
+                    *indices_iterator++ = int(indices[1]);
+                    *indices_iterator++ = int(indices[2]);
+                }
             }
 
-            transformed_vertices.resize (number_of_vertices);
-                display_vertices.resize (number_of_vertices);
-
-            // Se inicializan los datos de color de los vértices con colores aleatorios:
-
-            original_colors.resize (number_of_vertices);
-
-            for (size_t index = 0; index < number_of_vertices; index++)
-            {
-                original_colors[index].set (rand_clamp (), rand_clamp (), rand_clamp ());
-            }
-
-            // Se generan los índices de los triángulos:
-
-            size_t number_of_triangles = mesh->mNumFaces;
-
-            original_indices.resize (number_of_triangles * 3);
-
-            Index_Buffer::iterator indices_iterator = original_indices.begin ();
-
-            for (size_t index = 0; index < number_of_triangles; index++)
-            {
-                auto & face = mesh->mFaces[index];
-
-                assert(face.mNumIndices == 3);              // Una face puede llegar a tener de 1 a 4 índices,
-                                                            // pero nos interesa que solo haya triángulos
-                auto indices = face.mIndices;
-
-                *indices_iterator++ = int(indices[0]);
-                *indices_iterator++ = int(indices[1]);
-                *indices_iterator++ = int(indices[2]);
-            }
         }
     }
 
@@ -91,21 +98,23 @@ namespace example
     {
         // Se actualizan los parámetros de transformatión (sólo se modifica el ángulo):
 
-        static float angle = 0.f;
+        //static float angle = 0.f;
 
-        angle += 0.025f;
+        //angle += 0.025f;
 
         // Se crean las matrices de transformación:
 
         Matrix44 identity(1);
-        Matrix44 scaling     = scale           (identity, 4.f);
-        Matrix44 rotation_y  = rotate_around_y (identity, angle);
-        Matrix44 translation = translate       (identity, Vector3f{ 0.f, 0.5f, -10.f });
+        //Matrix44 scaling     = scale           (identity, 4.f);
+        Matrix44 scaling     = scale           (identity, 0.1f);
+        //Matrix44 rotation_y  = rotate_around_y (identity, angle);
+        Matrix44 translation = translate       (identity, Vector3f{ -2.5f, 8.f, -10.f });
         Matrix44 projection  = perspective     (20, 1, 15, float(width) / height);
 
         // Creación de la matriz de transformación unificada:
 
-        Matrix44 transformation = projection * translation * rotation_y * scaling;
+        //Matrix44 transformation = projection * translation * rotation_y * scaling;
+        Matrix44 transformation = projection * translation * scaling;
 
         // Se transforman todos los vértices usando la matriz de transformación resultante:
 

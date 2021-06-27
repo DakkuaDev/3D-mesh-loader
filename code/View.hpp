@@ -32,17 +32,19 @@
             typedef vector< Color  >      Vertex_Colors;
 
         private:
+            //D:\Dev\VisualStudio\3d-mesh-loader\shared\assets
+            //static constexpr char base_file_path[] = "../../shared/assets/";
 
-            static constexpr char mesh_file_path[] = "../../shared/assets/stanford-bunny.obj";
-
+            //const aiScene* scene;
+            
             Color_Buffer               color_buffer;
             Rasterizer< Color_Buffer > rasterizer;
 
-            Vertex_Buffer     original_vertices;
-            Index_Buffer      original_indices;
-            Vertex_Colors     original_colors;
-            Vertex_Buffer     transformed_vertices;
-            vector< Point4i > display_vertices;
+            Vertex_Buffer     original_vertices ;
+            Index_Buffer      original_indices ;
+            Vertex_Colors     original_colors ;
+            Vertex_Buffer     transformed_vertices ;
+            vector< Point4i > display_vertices ;
 
             unsigned width;
             unsigned height;
