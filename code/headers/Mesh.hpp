@@ -31,7 +31,12 @@ namespace MeshLoaderExercise
 
     private:
 
-        View* view;
+        //View* view;
+
+        aiScene* scene;
+
+        int window_width = 800u;
+        int window_height = 600u;
 
         // Color
         typedef Color_Buffer< Rgb888 > Color_Buffer;
@@ -65,7 +70,7 @@ namespace MeshLoaderExercise
 
     public:
         //Mesh(View* _view, int _id, vector< Vertex> vertices, vector< int > indices );
-        Mesh(View& _view, int _id);
+        Mesh(aiScene& scene, int _id);
         //Mesh(&Mesh());
         ~Mesh() = default;
 

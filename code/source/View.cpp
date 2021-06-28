@@ -11,12 +11,13 @@
 #include <assimp/scene.h>
 #include <assimp/postprocess.h>
 
+#include <memory>
+
+
 namespace MeshLoaderExercise
 {
     View::View(int _width, int _height) : width (_width), height (_height)
     {
-        //tree_mesh = new Mesh(this, 0);
-
         const aiScene* scene;
         Assimp::Importer importer;
 
@@ -26,9 +27,8 @@ namespace MeshLoaderExercise
             aiProcess_Triangulate | aiProcess_JoinIdenticalVertices | aiProcess_SortByPType
         );
 
-        //tree_mesh->setup_mesh();
-        //tree_mesh->draw();
-       
+        shared_ptr<Mesh> test_mesh = make_shared<Mesh>(scene, 0);
+        test_mesh->draw();     
     }
 
     void View::update ()

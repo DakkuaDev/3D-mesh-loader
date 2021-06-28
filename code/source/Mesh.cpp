@@ -33,11 +33,13 @@ namespace MeshLoaderExercise
 
 	//}
 
-    Mesh::Mesh(View& _view, int _id)
+
+    Mesh::Mesh(aiScene& _scene, int _id) 
         :
-        view(&_view),
+        //view(&_view),
+        scene (&_scene),
         mesh_id(_id),
-        color_buffer(view->get_width(), view->get_height()),
+        color_buffer(window_width, window_height),
         rasterizer(color_buffer)
     {
         setup_mesh();
@@ -45,9 +47,10 @@ namespace MeshLoaderExercise
 
 	void Mesh::setup_mesh()
 	{
-        const aiScene* scene;
+        //const aiScene* scene;
 
         // Se obtiene la malla
+        //auto mesh = scene->mMeshes[mesh_id];
         auto mesh = scene->mMeshes[mesh_id];
 
         size_t number_of_vertices = mesh->mNumVertices;
@@ -106,8 +109,8 @@ namespace MeshLoaderExercise
         // rango de int (que es lo que espera fill_convex_polygon_z_buffer).
 
         Matrix44 identity(1);
-        Matrix44 scaling = scale(identity, float(view->get_width() / 2), float(view->get_height() / 2), 100000000.f);
-        Matrix44 translation = translate(identity, Vector3f{ float(view->get_width() / 2), float(view->get_height() / 2), 0.f });
+        Matrix44 scaling = scale(identity, float(window_width / 2), float(window_height / 2), 100000000.f);
+        Matrix44 translation = translate(identity, Vector3f{ float(window_width / 2), float(window_height / 2), 0.f });
         Matrix44 transformation = translation * scaling;
 
         for (size_t index = 0, number_of_vertices = transformed_vertices.size(); index < number_of_vertices; index++)
