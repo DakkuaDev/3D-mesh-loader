@@ -16,19 +16,21 @@
 
 namespace MeshLoaderExercise
 {
-    View::View(int _width, int _height) : width (_width), height (_height)
+    View::View(const unsigned int _width, const unsigned int _height) :
+        width  (_width), 
+        height (_height),
+        color_buffer(_width, _height),
+        rasterizer(color_buffer)
     {
-        const aiScene* scene;
-        Assimp::Importer importer;
 
-        scene = importer.ReadFile
-        (
-            "../../shared/assets/island.obj",
-            aiProcess_Triangulate | aiProcess_JoinIdenticalVertices | aiProcess_SortByPType
-        );
+        //scene = importer.ReadFile
+        //(
+        //    "../../shared/assets/island.obj",
+        //    aiProcess_Triangulate | aiProcess_JoinIdenticalVertices | aiProcess_SortByPType
+        //);
 
-        shared_ptr<Mesh> test_mesh = make_shared<Mesh>(scene, 0);
-        test_mesh->draw();     
+        //shared_ptr<Mesh> test_mesh = make_shared<Mesh>(scene, 0);
+        //test_mesh->draw();     
     }
 
     void View::update ()

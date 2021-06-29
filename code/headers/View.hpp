@@ -7,9 +7,18 @@
 #ifndef VIEW_HEADER
 #define VIEW_HEADER
 
+#include <Color_Buffer.hpp>
+
+#include "Rasterizer.hpp"
 #include "Mesh.hpp"
 
+#include <assimp/Importer.hpp>
+#include <assimp/scene.h>
+#include <assimp/postprocess.h>
+
 using namespace std;
+using namespace argb;
+using namespace Assimp;
 
 namespace MeshLoaderExercise
 {
@@ -19,13 +28,16 @@ namespace MeshLoaderExercise
     {
     private:
 
-        //static unsigned width;
-        //static unsigned height;
+        typedef Rgb888                Color;
+        typedef Color_Buffer< Color > Color_Buffer;
 
-        //Mesh* tree_mesh;
+    private:
 
-        int width;
-        int height;
+        Color_Buffer               color_buffer;
+        Rasterizer< Color_Buffer > rasterizer;
+
+        unsigned int width;
+        unsigned int height;
 
     public:
 
@@ -37,15 +49,17 @@ namespace MeshLoaderExercise
         //    return instance;
         //}
 
-        View(int _width, int _height);
+        View(const unsigned int _width, const unsigned int _height);
 
         void update ();
         void render ();
 
     public:
 
-        inline unsigned get_width() { return width; }
-        inline unsigned get_height() { return height; }       
+        inline unsigned int get_width() { return width; }
+        inline unsigned int get_height() { return height; }
+
+        inline Rasterizer< Color_Buffer > get_rasterizer() { return rasterizer; }
     };
 
 }

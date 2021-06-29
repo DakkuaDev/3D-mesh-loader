@@ -5,7 +5,11 @@
 */
 
 #include "View.hpp"
+#include "Mesh.hpp"
+
 #include <SFML/Window.hpp>
+
+#include <memory>
 
 using namespace sf;
 using namespace MeshLoaderExercise;
@@ -14,11 +18,15 @@ int main ()
 {
     // Create the window and the view that will be shown within the window:
 
-    constexpr auto window_width  = 800u;
-    constexpr auto window_height = 600u;
+    const unsigned int window_width  = 800u;
+    const unsigned int window_height = 600u;
 
     Window window(VideoMode(window_width, window_height), "Mesh Loader", Style::Titlebar | Style::Close);
     View   view  (window_width, window_height);
+
+    Mesh   mesh  (view);
+
+    //mesh.load_mesh("../../shared/assets/stanford-bunny.obj");
 
     window.setVerticalSyncEnabled (true);
 
@@ -35,11 +43,14 @@ int main ()
             if (event.type == Event::Closed) exit = true;
         }
 
-        view.update ();
+        //view.update ();
+        mesh.update();
 
-        view.render ();
+        //view.render ();
+        mesh.render();
 
         window.display ();
+        
     }
     while (!exit);
 
