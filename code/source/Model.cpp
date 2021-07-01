@@ -40,13 +40,9 @@ namespace MeshLoaderExercise
 	}
 	Mesh Model::process_mesh(aiMesh* mesh, const aiScene* scene)
 	{
+		Mesh new_mesh = Mesh(*this);
+		new_mesh.init_mesh(mesh);
 
-		for (unsigned int i = 0; i < mesh->mNumVertices; i++)
-		{
-			// process vertex positions, normals and texture coordinates
-			meshes[i].init_mesh(mesh);
-		}
-
-		return Mesh(*this);
+		return new_mesh;
 	}
 }

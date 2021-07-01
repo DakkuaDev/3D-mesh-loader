@@ -20,10 +20,10 @@ namespace MeshLoaderExercise
 
     void Scene::update ()
     {
-        for (int i = 0; i <= models.size(); i++)
+        for (int i = 0; i <= models.size() - 1; i++)
         {
             auto mesh = models[i].get()->get_meshes();
-            for (int j = 0; j <= mesh.size(); j++)
+            for (int j = 0; j <= mesh.size() - 1; j++)
             {
                 mesh[j].update_mesh();
             }
@@ -32,10 +32,10 @@ namespace MeshLoaderExercise
 
     void Scene::render ()
     {
-        for (int i = 0; i <= models.size(); i++)
+        for (int i = 0; i <= models.size() - 1; i++)
         {
             auto mesh = models[i].get()->get_meshes();
-            for (int j = 0; j <= mesh.size(); j++)
+            for (int j = 0; j <= mesh.size() - 1; j++)
             {
                 mesh[j].draw_mesh();
             }

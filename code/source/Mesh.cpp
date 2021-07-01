@@ -76,7 +76,7 @@ namespace MeshLoaderExercise
         // Se crean las matrices de transformación:
         
         Matrix44 identity(1);
-        Matrix44 scaling = scale(identity, 0.005f);
+        Matrix44 scaling = scale(identity, 4.f);
         Matrix44 rotation_y = rotate_around_y(identity, angle);
         Matrix44 translation = translate(identity, Vector3f{ 0.f, 0.5f, -10.f });
 
