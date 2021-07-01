@@ -4,38 +4,33 @@
 * @Date: 06/2021
 */
 
-#include "View.hpp"
-#include "Mesh.hpp"
-
+#include "Scene.hpp"
 #include <SFML/Window.hpp>
-
-#include <memory>
 
 using namespace sf;
 using namespace MeshLoaderExercise;
 
 int main ()
 {
-    // Create the window and the view that will be shown within the window:
-
     const unsigned int window_width  = 800u;
     const unsigned int window_height = 600u;
 
+    // 1. Creo la ventana de aplicación
     Window window(VideoMode(window_width, window_height), "Mesh Loader", Style::Titlebar | Style::Close);
-    View   view  (window_width, window_height);
-
-    Mesh   mesh  (view);
-
-    //mesh.load_mesh("../../shared/assets/stanford-bunny.obj");
 
     window.setVerticalSyncEnabled (true);
 
-    // Run the main loop:
+    // 2. Creo la escena
+    Scene scene(window_width, window_height);
+
+
+    // 3. Creo un bucle de aplicación
 
     bool exit = false;
 
     do
     {
+        // 3.1 Eventos de teclado (input)
         Event event;
 
         while (window.pollEvent (event))
@@ -43,12 +38,13 @@ int main ()
             if (event.type == Event::Closed) exit = true;
         }
 
-        //view.update ();
-        mesh.update();
+        // 3.2 Update
+        scene.update();
 
-        //view.render ();
-        mesh.render();
+        // 3.3 Render
+        scene.render();
 
+        // 3.4 Lo muestro por pantalla
         window.display ();
         
     }

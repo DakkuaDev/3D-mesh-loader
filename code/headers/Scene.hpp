@@ -4,27 +4,26 @@
 * @Date: 06/2021
 */
 
-#ifndef VIEW_HEADER
-#define VIEW_HEADER
+#ifndef SCENE_HEADER
+#define SCENE_HEADER
 
 #include <Color_Buffer.hpp>
 
 #include "Rasterizer.hpp"
+#include "Model.hpp"
 #include "Mesh.hpp"
 
-#include <assimp/Importer.hpp>
-#include <assimp/scene.h>
-#include <assimp/postprocess.h>
+#include <memory>
+#include <vector>
+#include <string>
 
 using namespace std;
 using namespace argb;
-using namespace Assimp;
 
 namespace MeshLoaderExercise
 {
-
-    class Mesh;
-    class View
+    class Model;
+    class Scene
     {
     private:
 
@@ -36,20 +35,20 @@ namespace MeshLoaderExercise
         Color_Buffer               color_buffer;
         Rasterizer< Color_Buffer > rasterizer;
 
+        vector<shared_ptr<Model>> models;
+
         unsigned int width;
         unsigned int height;
+
+        // Modelos
+        shared_ptr< Model > model_a;
+
+
 
     public:
 
 
-        //static View& getInstance()
-        //{
-        //    static View instance(width, height); // Guaranteed to be destroyed.
-        //                          // Instantiated on first use.
-        //    return instance;
-        //}
-
-        View(const unsigned int _width, const unsigned int _height);
+        Scene(const unsigned int _width, const unsigned int _height);
 
         void update ();
         void render ();
