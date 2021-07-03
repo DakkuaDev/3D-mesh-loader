@@ -29,22 +29,33 @@
             typedef vector< Vertex >      Vertex_Buffer;
             typedef vector< int    >      Index_Buffer;
             typedef vector< Color  >      Vertex_Colors;
+            typedef vector< Point4i>      Display_Buffer;
 
         private:
 
-            static constexpr char mesh_file_path[] = "../../shared/assets/stanford-bunny.obj";
+            static constexpr char mesh_file_path[] = "../../shared/assets/scene_composition.obj";
 
             Color_Buffer               color_buffer;
             Rasterizer< Color_Buffer > rasterizer;
 
             Vertex_Buffer     original_vertices;
+            vector< Vertex_Buffer >     original_vertices_vector;
+
             Index_Buffer      original_indices;
+            vector< Index_Buffer > original_indices_vector;
+
             Vertex_Colors     original_colors;
+            vector< Vertex_Colors > original_colors_vector;
+
             Vertex_Buffer     transformed_vertices;
-            vector< Point4i > display_vertices;
+            vector< Vertex_Buffer > transformed_vertices_vector;
+
+            Display_Buffer display_vertices;
+            vector< Display_Buffer > display_vertices_vector;
 
             unsigned width;
             unsigned height;
+            unsigned total_meshes;
 
         public:
 
