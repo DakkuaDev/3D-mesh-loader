@@ -1,8 +1,7 @@
-/*
-* @Author: Daniel Guerra Gallardo
-* @Description: Programa de renderizado 3D de mayas poligonales
-* @Date: 06/2021
-*/
+
+// Este código es de dominio público.
+// angel.rodriguez@esne.edu
+// 2016.01 - 2021.04
 
 #ifndef MATH_HEADER
 #define MATH_HEADER
@@ -12,7 +11,7 @@
     #include <glm/gtx/matrix_decompose.hpp>
     #include <glm/gtc/matrix_transform.hpp>
 
-    namespace MeshLoaderExercise
+    namespace example
     {
 
         typedef glm::ivec2 Vector2i;

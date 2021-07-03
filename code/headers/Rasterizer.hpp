@@ -1,8 +1,7 @@
-/*
-* @Author: Daniel Guerra Gallardo
-* @Description: Programa de renderizado 3D de mayas poligonales
-* @Date: 06/2021
-*/
+
+// Este código es de dominio público.
+// angel.rodriguez@esne.edu
+// 2013.12 - 2021.03
 
 #ifndef RASTERIZER_HEADER
 #define RASTERIZER_HEADER
@@ -13,7 +12,7 @@
     #include <limits>
     #include "math.hpp"
 
-    namespace MeshLoaderExercise
+    namespace example
     {
 
         template< class COLOR_BUFFER_TYPE >

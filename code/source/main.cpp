@@ -1,36 +1,32 @@
-/*
-* @Author: Daniel Guerra Gallardo
-* @Description: Programa de renderizado 3D de mayas poligonales
-* @Date: 06/2021
-*/
 
-#include "Scene.hpp"
+// Este cÃ³digo es de dominio pÃºblico.
+// angel.rodriguez@esne.edu
+// 2021.12 - 2021.04
+
+#include "View.hpp"
 #include <SFML/Window.hpp>
 
 using namespace sf;
-using namespace MeshLoaderExercise;
+using namespace example;
 
 int main ()
 {
-    const unsigned int window_width  = 800u;
-    const unsigned int window_height = 600u;
+    // Create the window and the view that will be shown within the window:
 
-    // 1. Creo la ventana de aplicación
+    constexpr auto window_width  = 800u;
+    constexpr auto window_height = 600u;
+
     Window window(VideoMode(window_width, window_height), "Mesh Loader", Style::Titlebar | Style::Close);
+    View   view  (window_width, window_height);
 
     window.setVerticalSyncEnabled (true);
 
-    // 2. Creo la escena
-    Scene scene(window_width, window_height);
-
-
-    // 3. Creo un bucle de aplicación
+    // Run the main loop:
 
     bool exit = false;
 
     do
     {
-        // 3.1 Eventos de teclado (input)
         Event event;
 
         while (window.pollEvent (event))
@@ -38,17 +34,13 @@ int main ()
             if (event.type == Event::Closed) exit = true;
         }
 
-        // 3.2 Update
-        scene.update();
+        view.update ();
 
-        // 3.3 Render
-        scene.render();
+        view.render ();
 
-        // 3.4 Lo muestro por pantalla
         window.display ();
-        
     }
-    while (!exit);
+    while (not exit);
 
     return 0;
 }
