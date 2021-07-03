@@ -46,6 +46,7 @@ namespace example
 
                 // Se copian los datos de coordenadas de vértices:
   
+                Vertex_Buffer     original_vertices;
                 original_vertices.resize(number_of_vertices);
 
                 for (size_t index = 0; index < number_of_vertices; index++)
@@ -56,14 +57,17 @@ namespace example
                 }
                 original_vertices_vector.push_back(original_vertices);
 
+                Vertex_Buffer     transformed_vertices;
                 transformed_vertices.resize(number_of_vertices);
                 transformed_vertices_vector.push_back(transformed_vertices);
 
+                Display_Buffer display_vertices;
                 display_vertices.resize(number_of_vertices);
                 display_vertices_vector.push_back(display_vertices);
 
                 // Se inicializan los datos de color de los vértices con colores aleatorios:
 
+                Vertex_Colors     original_colors;
                 original_colors.resize(number_of_vertices);
 
                 for (size_t index = 0; index < number_of_vertices; index++)
@@ -76,6 +80,7 @@ namespace example
 
                 size_t number_of_triangles = mesh->mNumFaces;
 
+                Index_Buffer      original_indices;
                 original_indices.resize(number_of_triangles * 3);
 
                 Index_Buffer::iterator indices_iterator = original_indices.begin();
@@ -154,6 +159,8 @@ namespace example
         // La coordenada Z se escala a un valor suficientemente grande dentro del
         // rango de int (que es lo que espera fill_convex_polygon_z_buffer).
 
+        rasterizer.clear ();
+
         for (int i = 0; i < total_meshes; i++)
         {
 
@@ -169,7 +176,6 @@ namespace example
 
             // Se borra el framebúffer y se dibujan los triángulos:
 
-            rasterizer.clear ();
 
             for (int * indices = original_indices_vector[i].data (), * end = indices + original_indices_vector[i].size (); indices < end; indices += 3)
             {

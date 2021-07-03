@@ -38,19 +38,19 @@
             Color_Buffer               color_buffer;
             Rasterizer< Color_Buffer > rasterizer;
 
-            Vertex_Buffer     original_vertices;
+            //Vertex_Buffer     original_vertices;
             vector< Vertex_Buffer >     original_vertices_vector;
 
-            Index_Buffer      original_indices;
+            //Index_Buffer      original_indices;
             vector< Index_Buffer > original_indices_vector;
 
-            Vertex_Colors     original_colors;
+            //Vertex_Colors     original_colors;
             vector< Vertex_Colors > original_colors_vector;
 
-            Vertex_Buffer     transformed_vertices;
+            //Vertex_Buffer     transformed_vertices;
             vector< Vertex_Buffer > transformed_vertices_vector;
 
-            Display_Buffer display_vertices;
+            //Display_Buffer display_vertices;
             vector< Display_Buffer > display_vertices_vector;
 
             unsigned width;
