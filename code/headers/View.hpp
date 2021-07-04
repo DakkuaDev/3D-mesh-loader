@@ -1,15 +1,19 @@
-
-// Este código es de dominio público.
-// angel.rodriguez@esne.edu
-// 2013.12 - 2021.04
+/*
+* @Author: Daniel Guerra Gallardo
+* @Date: 07/2021
+* @Description: 3D mesh loader exercise
+* daniel.guerra.gallardo99@gmail.com
+*/
 
 #ifndef VIEW_HEADER
 #define VIEW_HEADER
 
+    #include "EntityTrasform.hpp"
+
     #include <Color_Buffer.hpp>
     #include <cstdlib>
-    #include "math.hpp"
     #include "Rasterizer.hpp"
+    #include "math.hpp"
     #include <vector>
 
     namespace example
@@ -19,6 +23,7 @@
         using argb::Rgb888;
         using argb::Color_Buffer;
 
+        class EntityTrasform;
         class View
         {
         private:
@@ -32,6 +37,7 @@
             typedef vector< Point4i>      Display_Buffer;
 
         private:
+
 
             static constexpr char mesh_file_path[] = "../../shared/assets/scene_composition.obj";
 
@@ -53,6 +59,7 @@
             //Display_Buffer display_vertices;
             vector< Display_Buffer > display_vertices_vector;
 
+            vector< EntityTrasform > entities;
             unsigned width;
             unsigned height;
             unsigned total_meshes;

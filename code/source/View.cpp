@@ -1,7 +1,9 @@
-
-// Este código es de dominio público.
-// angel.rodriguez@esne.edu
-// 2013.12 - 2021.04
+/*
+* @Author: Daniel Guerra Gallardo
+* @Date: 07/2021
+* @Description: 3D mesh loader exercise
+* daniel.guerra.gallardo99@gmail.com
+*/
 
 #include <cassert>
 #include <cmath>
@@ -41,6 +43,10 @@ namespace example
                 // Para este ejemplo se coge la primera malla solamente:
 
                 auto mesh = scene->mMeshes[i];
+
+                // Creo una nueva entidad de la maya para poderla trasformar por separado
+                EntityTrasform entity("entity" + std::to_string(i));
+                entities.push_back(entity);
 
                 size_t number_of_vertices = mesh->mNumVertices;
 
@@ -108,30 +114,22 @@ namespace example
         for (int i = 0; i < total_meshes; i++)
         {
 
-            // Se actualizan los parámetros de transformatión (sólo se modifica el ángulo):
+            // 1. Se actualizan los parámetros de transformatión (sólo se modifica el ángulo):
 
             static float angle = 0.f;
-
             angle += 0.025f;
 
-            // Se crean las matrices de transformación:
-
-            Matrix44 identity(1);
-            /*Matrix44 scaling     = scale           (identity, 4.f);
-            Matrix44 rotation_y  = rotate_around_y (identity, angle);
-            Matrix44 translation = translate       (identity, Vector3f{ 0.f, 0.5f, -10.f });
-            Matrix44 projection  = perspective     (20, 1, 15, float(width) / height);*/
-
-            Matrix44 scaling     = scale           (identity, 0.05f);
-            Matrix44 rotation_y  = rotate_around_y (identity, angle);
-            Matrix44 translation = translate       (identity, Vector3f{ 0.f, 3.f, -5.f });
-            Matrix44 projection  = perspective     (20, 1, 15, float(width) / height);
+            // 2. Se trasforma la entidad
+            entities.at(i).scale_entity(0.05f);
+            entities.at(i).rotate_entity_y(angle);
+            entities.at(i).traslate_entity(0.f, 3.f, -5.f);
 
             // Creación de la matriz de transformación unificada:
+            Matrix44 projection = perspective(20, 1, 15, float(width) / height);
 
-            Matrix44 transformation = projection * translation * rotation_y * scaling;
+            Matrix44 transformation = entities.at(i).update_trasform(projection);
 
-            // Se transforman todos los vértices usando la matriz de transformación resultante:
+            // 3. Se transforman todos los vértices usando la matriz de transformación resultante:
 
             for (size_t index = 0, number_of_vertices = original_vertices_vector[i].size(); index < number_of_vertices; index++)
             {

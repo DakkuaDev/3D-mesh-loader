@@ -84,11 +84,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\code\headers\EntityTrasform.hpp" />
     <ClInclude Include="..\..\code\headers\math.hpp" />
     <ClInclude Include="..\..\code\headers\Rasterizer.hpp" />
     <ClInclude Include="..\..\code\headers\View.hpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\code\source\EntityTrasform.cpp" />
     <ClCompile Include="..\..\code\source\main.cpp" />
     <ClCompile Include="..\..\code\source\View.cpp" />
   </ItemGroup>

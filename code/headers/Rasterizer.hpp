@@ -1,7 +1,9 @@
-
-// Este código es de dominio público.
-// angel.rodriguez@esne.edu
-// 2013.12 - 2021.03
+/*
+* @Author: Daniel Guerra Gallardo
+* @Date: 07/2021
+* @Description: 3D mesh loader exercise
+* daniel.guerra.gallardo99@gmail.com
+*/
 
 #ifndef RASTERIZER_HEADER
 #define RASTERIZER_HEADER
