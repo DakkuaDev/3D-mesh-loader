@@ -105,6 +105,9 @@ namespace example
                 }
                 original_indices_vector.push_back(original_indices);
             }
+
+            // Uso un grafo de escena ( Isla (parent) -> Casa (child) )
+            entities.at(1).set_parent(entities.at(0));
         }
     }
 
@@ -124,9 +127,9 @@ namespace example
             entities.at(i).rotate_entity_y(angle);
             entities.at(i).traslate_entity(0.f, 3.f, -5.f);
 
+
             // Creación de la matriz de transformación unificada:
             Matrix44 projection = perspective(20, 1, 15, float(width) / height);
-
             Matrix44 transformation = entities.at(i).update_trasform(projection);
 
             // 3. Se transforman todos los vértices usando la matriz de transformación resultante:

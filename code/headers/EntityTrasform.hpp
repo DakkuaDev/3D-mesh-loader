@@ -21,6 +21,8 @@ namespace example
     {
     private:
 
+        EntityTrasform* parent = nullptr;
+
         Matrix44 identity;
 
         Matrix44 translation;
@@ -48,6 +50,8 @@ namespace example
         void scale_entity(float scale_factor);
 
         Matrix44 update_trasform(Matrix44 projection);
+
+        inline void set_parent(EntityTrasform& new_parent) { parent = &new_parent; }
     };
 }
 

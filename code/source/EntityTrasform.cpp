@@ -18,7 +18,6 @@ namespace example
 		translation = translate(identity, Vector3f{ 0.f, 0.f, 0.f });
 	}
 
-	// 0.f, 3.f, -5.f
 	void EntityTrasform::traslate_entity(float x, float y, float z)
 	{
 		translation = translate(identity, Vector3f{ x, y, z });
@@ -49,11 +48,18 @@ namespace example
 	{
 		Matrix44 transformation(1);
 		
-
-		transformation = projection * translation * rotation_y * scaling;
+		if (parent)
+		{
+			transformation = parent->update_trasform(projection) * projection * translation * rotation_y * scaling;
+		}
+		else
+		{
+			transformation = projection * translation * rotation_y * scaling;
+		}
 
 		return transformation;
 	}
+
 }
 
 
