@@ -9,6 +9,7 @@
 #define VIEW_HEADER
 
     #include "EntityTrasform.hpp"
+    #include "Camera.hpp"
 
     #include <Color_Buffer.hpp>
     #include <cstdlib>
@@ -23,6 +24,7 @@
         using argb::Rgb888;
         using argb::Color_Buffer;
 
+        class Camera;
         class EntityTrasform;
         class View
         {
@@ -38,6 +40,7 @@
 
         private:
 
+            Camera* camera;
 
             static constexpr char mesh_file_path[] = "../../shared/assets/scene_composition.obj";
 
@@ -70,6 +73,8 @@
 
             void update ();
             void render ();
+
+            inline Camera* get_camera() { return camera; }
 
         private:
 

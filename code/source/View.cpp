@@ -24,6 +24,9 @@ namespace example
         color_buffer(width, height),
         rasterizer  (color_buffer )
     {
+        // Incializo la cámara de la escena
+        camera = new Camera(20.0f, 0.1f, 500.0f, float(width) / float(height), Vector3f(0, 0, 20), Vector3f(0, 0, 0));;
+
         Assimp::Importer importer;
 
         auto scene = importer.ReadFile
