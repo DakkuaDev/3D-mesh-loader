@@ -28,9 +28,7 @@ namespace example
 
 	Matrix44 Camera::get_camera_matrix()
 	{
-		/*Matrix44 transformation(1);
-		transformation = projection * translation * rotation_y * scaling;*/
-
+		//TODO: cambiar a matrices
 		return glm::lookAt(glm::vec3(position.x, position.y, position.z), glm::vec3(target.x, target.y, target.z), glm::vec3(0, 1.0f, 0));
 	}
 }
