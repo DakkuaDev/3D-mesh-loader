@@ -22,22 +22,32 @@ namespace example
 		typedef Vector4f vec4;
 
 		// Campo de visión de la cámara
-		float fov = 90.0f;
+		float fov;
 
 		// Distancia del plano cercano de proyección
-		float near_z = 0.01f;
+		float near_z;
 
 		// Distancia del plano lejado de proyección
-		float far_z = 100.0f;
+		float far_z;
 
 		// Aspect ratio de la cámara
-		float ratio = 4.0f / 3.0f;
+		float ratio;
+
+		// Matrices
+		Matrix44 identity;
+		Matrix44 translation;
+
+		Matrix44 rotation_x;
+		Matrix44 rotation_y;
+		Matrix44 rotation_z;
 
 		// Posición de la cámara
 		vec4 position;
+		// Rotación de la cámara
+		vec4 rotation;
 
 		// Punto hacia el que mira la cámara
-		vec4 target = vec4(0.0f, 0.0f, -1.0f, 1.0f);
+		//vec4 target = vec4(0.0f, 0.0f, -1.0f, 1.0f);
 
 		//Matrix44 traslation;
 		//Matrix44 rotation;
@@ -51,6 +61,9 @@ namespace example
 	public:
 
 		void move(float x, float y, float z);
+		void rotate_x(float angle);
+		void rotate_y(float angle);
+		void rotate_z(float angle);
 
 		Matrix44 get_projection();
 		Matrix44 get_camera_matrix();

@@ -15,10 +15,10 @@ int main ()
 {
     // Create the window and the view that will be shown within the window:
 
-    constexpr auto window_width  = 800u;
-    constexpr auto window_height = 600u;
+    constexpr auto window_width  = 500u;
+    constexpr auto window_height = 500u;
 
-    int camera_speed = 1;
+    float camera_speed = 0.1f;
 
     Window window(VideoMode(window_width, window_height), "Mesh Loader", Style::Titlebar | Style::Close);
     View   view  (window_width, window_height);
@@ -37,26 +37,54 @@ int main ()
         {
             if (event.type == Event::Closed) exit = true;
 
-            switch (event.type == Event::KeyPressed)
+            if (sf::Mouse::isButtonPressed(sf::Mouse::Right))
             {
-            case sf::Keyboard::W :
-                view.get_camera()->move(0, 0, -camera_speed);
-                break;
-
-            case sf::Keyboard::A :
-                view.get_camera()->move(-camera_speed, 0, 0);
-                break;
-
-            case sf::Keyboard::S :
-                view.get_camera()->move(0, 0, camera_speed);
-                break;
-
-            case sf::Keyboard::D :
-                view.get_camera()->move(camera_speed, 0, 0);
-                break;
-            default:
-                break;
+                // Camera Movement (Click derecho del ratón + WASD
+                if (sf::Keyboard::isKeyPressed(sf::Keyboard::W))
+                {
+                    // Arriba
+                    view.get_camera()->move(0, -camera_speed, 0);
+                }
+                else if (sf::Keyboard::isKeyPressed(sf::Keyboard::S))
+                {
+                    // Abajo
+                    view.get_camera()->move(0, camera_speed, 0);
+                }
+                else if (sf::Keyboard::isKeyPressed(sf::Keyboard::D))
+                {
+                    // Derecha
+                    view.get_camera()->move(camera_speed, 0, 0);
+                }
+                else if (sf::Keyboard::isKeyPressed(sf::Keyboard::A))
+                {
+                    // Izquierda
+                    view.get_camera()->move(-camera_speed, 0, 0);
+                }
             }
+            else
+            {
+                // Camera Rotation (WASD)
+                if (sf::Keyboard::isKeyPressed(sf::Keyboard::W))
+                {
+                    // Vertical Positiva
+                    view.get_camera()->rotate_x(camera_speed);
+                }
+                else if (sf::Keyboard::isKeyPressed(sf::Keyboard::S))
+                {
+                    // Vertical Negativa
+                    view.get_camera()->rotate_x(-camera_speed);
+                }
+                else if (sf::Keyboard::isKeyPressed(sf::Keyboard::D))
+                {
+                    // Horizontal Positiva
+                    view.get_camera()->rotate_y(camera_speed);
+                }
+                else if (sf::Keyboard::isKeyPressed(sf::Keyboard::A))
+                {
+                    // Horizontal Negativa
+                    view.get_camera()->rotate_y(-camera_speed);
+                }
+            }         
         }
 
         view.update ();

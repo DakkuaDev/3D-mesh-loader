@@ -25,7 +25,8 @@ namespace example
         rasterizer  (color_buffer )
     {
         // Incializo la cámara de la escena
-        camera = new Camera(25.0f, 0.1f, 500.0f, float(width) / float(height), Vector3f(0, 0, 15), Vector3f(0, 0, 0));;
+        camera = new Camera(90, 1, 15, float(width) / height, Vector3f(0, 0, 0), Vector3f(0, 0, 0));
+        //Matrix44 projection = perspective(20, 1, 15, float(width) / height);
 
         Assimp::Importer importer;
 
@@ -128,12 +129,13 @@ namespace example
             // 2. Se trasforma la entidad
             entities.at(i).scale_entity(0.05f);
             entities.at(i).rotate_entity_y(angle);
-            entities.at(i).traslate_entity(0.f, 3.f, -5.f);
+            entities.at(i).traslate_entity(0.f, 3.f, -3.f);
 
 
             // Creación de la matriz de transformación unificada:
-            Matrix44 projection = perspective(20, 1, 15, float(width) / height);
-            Matrix44 transformation = entities.at(i).update_trasform(projection);
+            //Matrix44 projection = perspective(20, 1, 15, float(width) / height);
+            Matrix44 projection = camera->get_projection();
+            Matrix44 transformation = camera->get_camera_matrix() * entities.at(i).update_trasform(projection);
 
             // TODO: Añadir la cámara correctamente. Cambiar la clase a matrices y pasarla la proyección de vista(?
             //Matrix44 transformation = 
