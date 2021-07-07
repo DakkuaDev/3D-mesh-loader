@@ -86,6 +86,7 @@
   <ItemGroup>
     <ClInclude Include="..\..\code\headers\Camera.hpp" />
     <ClInclude Include="..\..\code\headers\EntityTrasform.hpp" />
+    <ClInclude Include="..\..\code\headers\Light.hpp" />
     <ClInclude Include="..\..\code\headers\math.hpp" />
     <ClInclude Include="..\..\code\headers\Rasterizer.hpp" />
     <ClInclude Include="..\..\code\headers\View.hpp" />
@@ -93,6 +94,7 @@
   <ItemGroup>
     <ClCompile Include="..\..\code\source\Camera.cpp" />
     <ClCompile Include="..\..\code\source\EntityTrasform.cpp" />
+    <ClCompile Include="..\..\code\source\Light.cpp" />
     <ClCompile Include="..\..\code\source\main.cpp" />
     <ClCompile Include="..\..\code\source\View.cpp" />
   </ItemGroup>
