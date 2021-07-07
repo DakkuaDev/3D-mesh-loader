@@ -12,6 +12,11 @@
 
 #include "math.hpp"
 
+#include <cassert>
+#include <cmath>
+
+#include <vector>
+
 namespace example
 {
 	class Light
@@ -25,7 +30,7 @@ namespace example
 		vec4 position;
 
 		//Intensidad ambiental (luz indirecta) 
-		vec3 Ia = vec3(0.75f, 0.75f, 0.75f);
+		vec3 Ia = vec3(1.f, 1.f, 1.f);
 
 		// Constante de reflectividad en superficie ambiental (0.0f - 1.0f)
 		float ka = 0.2f;
@@ -39,10 +44,10 @@ namespace example
 		~Light() = default;
 
 	public:
-		vec3 calculate_light(float angle);
+		vec3 calculate_light(Vector3f);
 
 	public: 
-		inline vec4 get_position() { return position; }
+		inline vec4 get_ambient_light() { return vec4(Ia, 1); }
 	};
 }
 

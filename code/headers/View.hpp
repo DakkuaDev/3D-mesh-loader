@@ -10,6 +10,7 @@
 
     #include "EntityTrasform.hpp"
     #include "Camera.hpp"
+    #include "Light.hpp"
 
     #include <Color_Buffer.hpp>
     #include <cstdlib>
@@ -34,6 +35,7 @@
             typedef Color_Buffer< Color > Color_Buffer;
             typedef Point4f               Vertex;
             typedef vector< Vertex >      Vertex_Buffer;
+            typedef vector<Vertex  >      Normal_Buffer;
             typedef vector< int    >      Index_Buffer;
             typedef vector< Color  >      Vertex_Colors;
             typedef vector< Point4i>      Display_Buffer;
@@ -55,6 +57,9 @@
 
             //Vertex_Colors     original_colors;
             vector< Vertex_Colors > original_colors_vector;
+
+            //Normal_Buffer     original_normals;
+            vector< Normal_Buffer >     original_normals_vector;
 
             //Vertex_Buffer     transformed_vertices;
             vector< Vertex_Buffer > transformed_vertices_vector;

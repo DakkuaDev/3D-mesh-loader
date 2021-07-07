@@ -9,7 +9,6 @@
 #include <cmath>
 #include "math.hpp"
 #include "View.hpp"
-#include "Light.hpp"
 
 #include <assimp/Importer.hpp>
 #include <assimp/scene.h>
@@ -58,15 +57,21 @@ namespace example
                 // Se copian los datos de coordenadas de vértices:
   
                 Vertex_Buffer     original_vertices;
+                Normal_Buffer     original_normals;
                 original_vertices.resize(number_of_vertices);
+                original_normals.resize(number_of_vertices);
 
                 for (size_t index = 0; index < number_of_vertices; index++)
                 {
                     auto& vertex = mesh->mVertices[index];
+                    auto& normal = mesh->mNormals[index];
 
                     original_vertices[index] = Vertex(vertex.x, -vertex.y, vertex.z, 1.f);
+                    original_normals[index] = Vertex(normal.x, normal.y, normal.z, 1.f);
+                    
                 }
                 original_vertices_vector.push_back(original_vertices);
+                original_normals_vector.push_back(original_normals);
 
                 Vertex_Buffer     transformed_vertices;
                 transformed_vertices.resize(number_of_vertices);
@@ -142,29 +147,23 @@ namespace example
 
             // 3. Iluminación de la escena
             
-            Light light(Vector3f(0.f, 0.f, 0.f));
-            Vector4f directional_light = light.get_position();
+            Light light(Vector3f(5.f, 10.f, 15.f));
+            //Vector4f directional_light = light.get_ambient_light();
+            //float vision_angle = 30;
 
-            //Ilumino
 
             for (size_t index = 0, number_of_vertices = original_vertices_vector[i].size(); index < number_of_vertices; index++)
             {
                // Calculo la luz (Ambiental + Difusa)
-                Vector4f directional_light = Vector4f(light.calculate_light(30), 1);
+                Vector4f directional_light = Vector4f(light.calculate_light(original_normals_vector[i][index]), 1);
+                float intensity = (directional_light.x, directional_light.y, directional_light.z);
+          
+                if (intensity > 1.0f) { intensity = 1.0f; }
+                else if (intensity < 0.0f) { intensity = 0.0f; }
 
-                //if (directional_light.x > 1.0f) { directional_light.x = 1.0f; }
-                //else if (directional_light.y > 1.0f) { directional_light.y = 1.0f; }
-                //else if (directional_light.z > 1.0f) { directional_light.z = 1.0f; }
-
-                //if (directional_light.x < 0.0f) { directional_light.x = 0.0f; }
-                //else if (directional_light.y > 0.0f) { directional_light.y = 0.0f; }
-                //else if (directional_light.z > 0.0f) { directional_light.z = 0.0f; }
-               
                 // Se la aplico al buffer de colores
-                original_colors_vector[i][index].set(
-                    (int)original_colors_vector[i][index].set_red((int)original_colors_vector[i][index].red() * directional_light.x),
-                    (int)original_colors_vector[i][index].set_green((int)original_colors_vector[i][index].green() * directional_light.y),
-                    (int)original_colors_vector[i][index].set_blue((int)original_colors_vector[i][index].blue() * directional_light.z));
+                original_colors_vector[i][index].set(intensity, intensity, intensity);
+ 
             }
 
             // 4. Se transforman todos los vértices usando la matriz de transformación resultante:
