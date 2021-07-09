@@ -18,16 +18,21 @@ int main ()
     constexpr auto window_width  = 500u;
     constexpr auto window_height = 500u;
 
+    // Camera velocity
     float camera_speed = 0.1f;
 
+    // Change this if you want to see light in the scene or the geometry (true: Lighting, false: Geometry)
+    bool bake_scene = true;
+
     Window window(VideoMode(window_width, window_height), "Mesh Loader", Style::Titlebar | Style::Close);
-    View   view  (window_width, window_height);
+    View   view  (window_width, window_height, bake_scene);
 
     window.setVerticalSyncEnabled (true);
 
     // Run the main loop:
 
     bool exit = false;
+    float delta = 0.005f;
 
     do
     {
@@ -87,7 +92,7 @@ int main ()
             }         
         }
 
-        view.update ();
+        view.update (delta);
 
         view.render ();
 

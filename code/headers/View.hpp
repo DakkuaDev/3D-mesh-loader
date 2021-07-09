@@ -11,6 +11,7 @@
     #include "EntityTrasform.hpp"
     #include "Camera.hpp"
     #include "Light.hpp"
+    #include "ClipPolygon.hpp"
 
     #include <Color_Buffer.hpp>
     #include <cstdlib>
@@ -27,6 +28,7 @@
 
         class Camera;
         class EntityTrasform;
+        class ClipPolygon;
         class View
         {
         private:
@@ -43,6 +45,7 @@
         private:
 
             Camera* camera;
+            ClipPolygon* clip_polygon;
 
             static constexpr char mesh_file_path[] = "../../shared/assets/scene_composition.obj";
 
@@ -72,14 +75,19 @@
             unsigned height;
             unsigned total_meshes;
 
+            bool bake_scene;
+
         public:
 
-            View(unsigned width, unsigned height);
+            View(unsigned width, unsigned height, bool bake_scene = true);
 
-            void update ();
+            void update (float delta);
             void render ();
 
-            inline Camera* get_camera() { return camera; }
+            inline Rasterizer< Color_Buffer > get_rasterizer() { return rasterizer; }
+            inline Camera* get_camera()  { return camera; }
+            inline unsigned get_width()  { return width;  }
+            inline unsigned get_height() { return height; }
 
         private:
 

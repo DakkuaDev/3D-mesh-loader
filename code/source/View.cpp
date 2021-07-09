@@ -10,6 +10,7 @@
 #include "math.hpp"
 #include "View.hpp"
 
+
 #include <assimp/Importer.hpp>
 #include <assimp/scene.h>
 #include <assimp/postprocess.h>
@@ -17,17 +18,19 @@
 namespace example
 {
 
-    View::View(unsigned width, unsigned height)
+    View::View(unsigned width, unsigned height, bool bake_scene)
     :
         width       (width ),
         height      (height),
+        bake_scene  (bake_scene),
         color_buffer(width, height),
         rasterizer  (color_buffer )
     {
-        // Incializo la cámara de la escena
+        // Incializo la cámara de la escena y su recorte geométrico
         camera = new Camera(90, 1, 15, float(width) / height, Vector3f(0, 0, 0), Vector3f(0, 0, 0));
-        //Matrix44 projection = perspective(20, 1, 15, float(width) / height);
+        clip_polygon = new ClipPolygon();
 
+        // Importo las mallas y el modelo
         Assimp::Importer importer;
 
         auto scene = importer.ReadFile
@@ -42,7 +45,7 @@ namespace example
 
         if (scene && scene->mNumMeshes > 0)
         {
-            for (int i = 0; i < total_meshes; i++)
+            for (unsigned i = 0; i < total_meshes; i++)
             {
                 // Para este ejemplo se coge la primera malla solamente:
 
@@ -88,8 +91,10 @@ namespace example
 
                 for (size_t index = 0; index < number_of_vertices; index++)
                 {
-                    //original_colors[index].set(rand_clamp(), rand_clamp(), rand_clamp());
-                    original_colors[index].set(220, 220, 220);
+                    if(bake_scene)
+                        original_colors[index].set(220, 220, 220);
+                    else
+                        original_colors[index].set(rand_clamp(), rand_clamp(), rand_clamp());
                 }
                 original_colors_vector.push_back(original_colors);
 
@@ -122,16 +127,16 @@ namespace example
         }
     }
 
-    void View::update ()
+    void View::update (float delta)
     {
 
-        for (int i = 0; i < total_meshes; i++)
+        for (unsigned i = 0; i < total_meshes; i++)
         {
 
             // 1. Se actualizan los parámetros de transformatión (sólo se modifica el ángulo):
 
-            static float angle = 0.f;
-            angle += 0.0025f;
+            static float angle = 0;
+            angle += delta;
 
             // 2. Se trasforma la entidad
             entities.at(i).scale_entity(0.05f);
@@ -146,25 +151,29 @@ namespace example
 
 
             // 3. Iluminación de la escena
-            
-            Light light(Vector3f(5.f, 10.f, 15.f));
-            //Vector4f directional_light = light.get_ambient_light();
-            //float vision_angle = 30;
 
-
-            for (size_t index = 0, number_of_vertices = original_vertices_vector[i].size(); index < number_of_vertices; index++)
+            if (bake_scene)
             {
-               // Calculo la luz (Ambiental + Difusa)
-                Vector4f directional_light = Vector4f(light.calculate_light(original_normals_vector[i][index]), 1);
-                float intensity = (directional_light.x, directional_light.y, directional_light.z);
-          
-                if (intensity > 1.0f) { intensity = 1.0f; }
-                else if (intensity < 0.0f) { intensity = 0.0f; }
+                Light light(Vector3f(5.f, 10.f, 15.f));
+                //Vector4f directional_light = light.get_ambient_light();
+                //float vision_angle = 30;
 
-                // Se la aplico al buffer de colores
-                original_colors_vector[i][index].set(intensity, intensity, intensity);
+
+                for (size_t index = 0, number_of_vertices = original_vertices_vector[i].size(); index < number_of_vertices; index++)
+                {
+                   // Calculo la luz (Ambiental + Difusa)
+                    Vector4f directional_light = Vector4f(light.calculate_light(original_normals_vector[i][index]), 1);
+                    float intensity = (directional_light.x, directional_light.y, directional_light.z);
+          
+                    if (intensity > 1.0f) { intensity = 1.0f; }
+                    else if (intensity < 0.0f) { intensity = 0.0f; }
+
+                    // Se la aplico al buffer de colores
+                    original_colors_vector[i][index].set(intensity, intensity, intensity);
  
+                }
             }
+            
 
             // 4. Se transforman todos los vértices usando la matriz de transformación resultante:
 
@@ -196,7 +205,7 @@ namespace example
 
         rasterizer.clear ();
 
-        for (int i = 0; i < total_meshes; i++)
+        for (unsigned i = 0; i < total_meshes; i++)
         {
 
             Matrix44 identity(1);
@@ -219,6 +228,9 @@ namespace example
                     // Se establece el color del polígono a partir del color de su primer vértice:
 
                     rasterizer.set_color (original_colors_vector[i][*indices]);
+
+                    // Vértices que se salen del viewport (recorte geométrico)
+                    int clipped_vertex_count = clip_polygon->clipping_polygon();
 
                     // Se rellena el polígono:
 

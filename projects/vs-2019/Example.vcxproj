@@ -85,6 +85,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="..\..\code\headers\Camera.hpp" />
+    <ClInclude Include="..\..\code\headers\ClipPolygon.hpp" />
     <ClInclude Include="..\..\code\headers\EntityTrasform.hpp" />
     <ClInclude Include="..\..\code\headers\Light.hpp" />
     <ClInclude Include="..\..\code\headers\math.hpp" />
@@ -93,6 +94,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\code\source\Camera.cpp" />
+    <ClCompile Include="..\..\code\source\ClipPolygon.cpp" />
     <ClCompile Include="..\..\code\source\EntityTrasform.cpp" />
     <ClCompile Include="..\..\code\source\Light.cpp" />
     <ClCompile Include="..\..\code\source\main.cpp" />
