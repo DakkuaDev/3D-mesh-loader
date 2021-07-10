@@ -14,7 +14,7 @@
     #include <limits>
     #include "math.hpp"
 
-    namespace example
+    namespace MeshLoader
     {
 
         template< class COLOR_BUFFER_TYPE >

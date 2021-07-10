@@ -9,14 +9,14 @@
 #include <SFML/Window.hpp>
 
 using namespace sf;
-using namespace example;
+using namespace MeshLoader;
 
 int main ()
 {
     // Create the window and the view that will be shown within the window:
 
-    constexpr auto window_width  = 500u;
-    constexpr auto window_height = 500u;
+    constexpr auto window_width  = 1280;
+    constexpr auto window_height = 720;
 
     // Camera velocity
     float camera_speed = 0.1f;

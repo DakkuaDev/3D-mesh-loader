@@ -8,7 +8,7 @@
 #include "EntityTrasform.hpp"
 
 
-namespace example
+namespace MeshLoader
 {
 	EntityTrasform::EntityTrasform(string id) : identity(1), id(id)
 		
@@ -48,6 +48,8 @@ namespace example
 	{
 		Matrix44 transformation(1);
 		
+
+		// Grafo de escena (Parent -> Child)
 		if (parent)
 		{
 			transformation = parent->update_trasform(projection) * projection * translation * rotation_y * scaling;

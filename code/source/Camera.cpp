@@ -7,7 +7,7 @@
 
 #include "Camera.hpp"
 
-namespace example
+namespace MeshLoader
 {
 	Camera::Camera(float fov, float near_z, float far_z, float ratio, vec3 position, vec3 rotation)
 		: position(vec4(position, 1)), rotation(vec4(rotation, 1)), fov(fov), near_z(near_z), far_z(far_z), ratio(ratio)
@@ -56,8 +56,6 @@ namespace example
 		Matrix44 transformation(1);
 
 		transformation = translation * rotation_x * rotation_y * rotation_z;
-		return transformation;
-		
-		//glm::lookAt(glm::vec3(position.x, position.y, position.z), glm::vec3(target.x, target.y, target.z), glm::vec3(0, 1.0f, 0));
+		return transformation;			
 	}
 }

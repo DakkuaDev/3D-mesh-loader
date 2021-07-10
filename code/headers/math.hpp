@@ -13,7 +13,7 @@
     #include <glm/gtx/matrix_decompose.hpp>
     #include <glm/gtc/matrix_transform.hpp>
 
-    namespace example
+    namespace MeshLoader
     {
 
         typedef glm::ivec2 Vector2i;

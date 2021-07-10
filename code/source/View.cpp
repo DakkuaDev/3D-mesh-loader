@@ -15,7 +15,7 @@
 #include <assimp/scene.h>
 #include <assimp/postprocess.h>
 
-namespace example
+namespace MeshLoader
 {
 
     View::View(unsigned width, unsigned height, bool bake_scene)

@@ -12,7 +12,7 @@
 
 #include "math.hpp"
 
-namespace example
+namespace MeshLoader
 {
 	class Camera
 	{
@@ -46,13 +46,6 @@ namespace example
 		// Rotación de la cámara
 		vec4 rotation;
 
-		// Punto hacia el que mira la cámara
-		//vec4 target = vec4(0.0f, 0.0f, -1.0f, 1.0f);
-
-		//Matrix44 traslation;
-		//Matrix44 rotation;
-
-
 	public:
 
 		Camera(float fov, float near_z, float faz_z, float ratio, vec3 position, vec3 rotation);
@@ -60,19 +53,24 @@ namespace example
 
 	public:
 
+		/* Mueve la cámara a una nueva posición */
 		void move(float x, float y, float z);
+
+		/* Gira la cámara en el eje x */
 		void rotate_x(float angle);
+
+		/* Gira la cámara en el eje y */
 		void rotate_y(float angle);
+
+		/* Gira la cámara en el eje z */
 		void rotate_z(float angle);
 
+	public:
+
+		// Propiedades
 		Matrix44 get_projection();
 		Matrix44 get_camera_matrix();
-		//inline vec4 get_position{ return position; }
-
 	};
-
 }
-
-
 #endif
 

@@ -1,9 +1,17 @@
+/*
+* @Author: Daniel Guerra Gallardo
+* @Date: 07/2021
+* @Description: 3D mesh loader exercise
+* daniel.guerra.gallardo99@gmail.com
+*/
+
+
 #include "ClipPolygon.hpp"
 
 #include <cmath>
 #include <math.hpp>
 
-namespace example
+namespace MeshLoader
 {
 
 	int ClipPolygon::clipping_polygon()

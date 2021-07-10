@@ -10,7 +10,7 @@
 #include <cmath>
 #include <ctgmath>
 
-namespace example
+namespace MeshLoader
 {
 	Light::Light(vec3 position) : position (vec4(position, 1))
 	{

@@ -19,7 +19,7 @@
     #include "math.hpp"
     #include <vector>
 
-    namespace example
+    namespace MeshLoader
     {
 
         using  std::vector;
@@ -52,45 +52,51 @@
             Color_Buffer               color_buffer;
             Rasterizer< Color_Buffer > rasterizer;
 
-            //Vertex_Buffer     original_vertices;
+            // Buffers (Pixel, Index, Normal, Display)
             vector< Vertex_Buffer >     original_vertices_vector;
-
-            //Index_Buffer      original_indices;
             vector< Index_Buffer > original_indices_vector;
-
-            //Vertex_Colors     original_colors;
             vector< Vertex_Colors > original_colors_vector;
-
-            //Normal_Buffer     original_normals;
             vector< Normal_Buffer >     original_normals_vector;
-
-            //Vertex_Buffer     transformed_vertices;
             vector< Vertex_Buffer > transformed_vertices_vector;
-
-            //Display_Buffer display_vertices;
             vector< Display_Buffer > display_vertices_vector;
 
+            // Entidades 
             vector< EntityTrasform > entities;
-            unsigned width;
-            unsigned height;
+
+            // Mallas
             unsigned total_meshes;
 
+            // Ancho del view
+            unsigned width;
+
+            // Alto del view
+            unsigned height;
+
+            // Bakeo de la escena
             bool bake_scene;
 
         public:
 
             View(unsigned width, unsigned height, bool bake_scene = true);
 
+            /* Bucle de trasformaciones principal de la escena */
             void update (float delta);
+
+            /* Bucle de renderizado principal de la escena*/
             void render ();
 
+            /* Propiedades */
             inline Rasterizer< Color_Buffer > get_rasterizer() { return rasterizer; }
             inline Camera* get_camera()  { return camera; }
             inline unsigned get_width()  { return width;  }
             inline unsigned get_height() { return height; }
 
+            inline bool get_bake() { return bake_scene; }
+            inline void set_bake(bool is_bake) { bake_scene = is_bake; }
+
         private:
 
+            /* Comprueba el Z-Buffer del polígono para ver si se dibuja o no */
             bool  is_frontface (const Vertex * const projected_vertices, const int * const indices);
             float rand_clamp   () { return float(rand () & 0xff) * 0.0039215f; }
 

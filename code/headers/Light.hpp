@@ -17,7 +17,7 @@
 
 #include <vector>
 
-namespace example
+namespace MeshLoader
 {
 	class Light
 	{
@@ -44,9 +44,13 @@ namespace example
 		~Light() = default;
 
 	public:
+
+		/* Calcula la luz en la escena: Ambiental + Difusa */
 		vec3 calculate_light(Vector3f);
 
 	public: 
+
+		// Propiedades
 		inline vec4 get_ambient_light() { return vec4(Ia, 1); }
 	};
 }
