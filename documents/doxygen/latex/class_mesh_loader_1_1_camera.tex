@@ -1,0 +1,120 @@
+\hypertarget{class_mesh_loader_1_1_camera}{}\doxysection{Mesh\+Loader\+::Camera Class Reference}
+\label{class_mesh_loader_1_1_camera}\index{MeshLoader::Camera@{MeshLoader::Camera}}
+
+
+{\ttfamily \#include $<$Camera.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_mesh_loader_1_1_camera_a3d30ba2bdab064a40c392f27d0c242da}{Camera}} (float fov, float near\+\_\+z, float faz\+\_\+z, float ratio, vec3 position, vec3 rotation)
+\item 
+\mbox{\hyperlink{class_mesh_loader_1_1_camera_afd1f2950d50ed4dd0efecbb2bb840067}{$\sim$\+Camera}} ()=default
+\item 
+void \mbox{\hyperlink{class_mesh_loader_1_1_camera_af05120d634adb03f2f49ed33c8e3af08}{move}} (float x, float y, float z)
+\item 
+void \mbox{\hyperlink{class_mesh_loader_1_1_camera_ad6b6135dcb158017dc5f241d2f1a6256}{rotate\+\_\+x}} (float angle)
+\item 
+void \mbox{\hyperlink{class_mesh_loader_1_1_camera_aa5b6232eec9cdb5b2f4269beecd95a2c}{rotate\+\_\+y}} (float angle)
+\item 
+void \mbox{\hyperlink{class_mesh_loader_1_1_camera_a1d2f7a1c947567c1f31e081b2c586093}{rotate\+\_\+z}} (float angle)
+\item 
+\mbox{\hyperlink{namespace_mesh_loader_afd51723ae7110a285707f40c693d45ce}{Matrix44}} \mbox{\hyperlink{class_mesh_loader_1_1_camera_ab28775c699d6d7fe9b7bcfc6ae3583fb}{get\+\_\+projection}} ()
+\item 
+\mbox{\hyperlink{namespace_mesh_loader_afd51723ae7110a285707f40c693d45ce}{Matrix44}} \mbox{\hyperlink{class_mesh_loader_1_1_camera_a4862e6168b6cf92e01d00f44f15c9812}{get\+\_\+camera\+\_\+matrix}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line 17 of file Camera.\+hpp.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_mesh_loader_1_1_camera_a3d30ba2bdab064a40c392f27d0c242da}\label{class_mesh_loader_1_1_camera_a3d30ba2bdab064a40c392f27d0c242da}} 
+\index{MeshLoader::Camera@{MeshLoader::Camera}!Camera@{Camera}}
+\index{Camera@{Camera}!MeshLoader::Camera@{MeshLoader::Camera}}
+\doxysubsubsection{\texorpdfstring{Camera()}{Camera()}}
+{\footnotesize\ttfamily Mesh\+Loader\+::\+Camera\+::\+Camera (\begin{DoxyParamCaption}\item[{float}]{fov,  }\item[{float}]{near\+\_\+z,  }\item[{float}]{faz\+\_\+z,  }\item[{float}]{ratio,  }\item[{vec3}]{position,  }\item[{vec3}]{rotation }\end{DoxyParamCaption})}
+
+
+
+Definition at line 12 of file Camera.\+cpp.
+
+\mbox{\Hypertarget{class_mesh_loader_1_1_camera_afd1f2950d50ed4dd0efecbb2bb840067}\label{class_mesh_loader_1_1_camera_afd1f2950d50ed4dd0efecbb2bb840067}} 
+\index{MeshLoader::Camera@{MeshLoader::Camera}!````~Camera@{$\sim$Camera}}
+\index{````~Camera@{$\sim$Camera}!MeshLoader::Camera@{MeshLoader::Camera}}
+\doxysubsubsection{\texorpdfstring{$\sim$Camera()}{~Camera()}}
+{\footnotesize\ttfamily Mesh\+Loader\+::\+Camera\+::$\sim$\+Camera (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_mesh_loader_1_1_camera_a4862e6168b6cf92e01d00f44f15c9812}\label{class_mesh_loader_1_1_camera_a4862e6168b6cf92e01d00f44f15c9812}} 
+\index{MeshLoader::Camera@{MeshLoader::Camera}!get\_camera\_matrix@{get\_camera\_matrix}}
+\index{get\_camera\_matrix@{get\_camera\_matrix}!MeshLoader::Camera@{MeshLoader::Camera}}
+\doxysubsubsection{\texorpdfstring{get\_camera\_matrix()}{get\_camera\_matrix()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespace_mesh_loader_afd51723ae7110a285707f40c693d45ce}{Matrix44}} Mesh\+Loader\+::\+Camera\+::get\+\_\+camera\+\_\+matrix (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 54 of file Camera.\+cpp.
+
+\mbox{\Hypertarget{class_mesh_loader_1_1_camera_ab28775c699d6d7fe9b7bcfc6ae3583fb}\label{class_mesh_loader_1_1_camera_ab28775c699d6d7fe9b7bcfc6ae3583fb}} 
+\index{MeshLoader::Camera@{MeshLoader::Camera}!get\_projection@{get\_projection}}
+\index{get\_projection@{get\_projection}!MeshLoader::Camera@{MeshLoader::Camera}}
+\doxysubsubsection{\texorpdfstring{get\_projection()}{get\_projection()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespace_mesh_loader_afd51723ae7110a285707f40c693d45ce}{Matrix44}} Mesh\+Loader\+::\+Camera\+::get\+\_\+projection (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 49 of file Camera.\+cpp.
+
+\mbox{\Hypertarget{class_mesh_loader_1_1_camera_af05120d634adb03f2f49ed33c8e3af08}\label{class_mesh_loader_1_1_camera_af05120d634adb03f2f49ed33c8e3af08}} 
+\index{MeshLoader::Camera@{MeshLoader::Camera}!move@{move}}
+\index{move@{move}!MeshLoader::Camera@{MeshLoader::Camera}}
+\doxysubsubsection{\texorpdfstring{move()}{move()}}
+{\footnotesize\ttfamily void Mesh\+Loader\+::\+Camera\+::move (\begin{DoxyParamCaption}\item[{float}]{x,  }\item[{float}]{y,  }\item[{float}]{z }\end{DoxyParamCaption})}
+
+
+
+Definition at line 22 of file Camera.\+cpp.
+
+\mbox{\Hypertarget{class_mesh_loader_1_1_camera_ad6b6135dcb158017dc5f241d2f1a6256}\label{class_mesh_loader_1_1_camera_ad6b6135dcb158017dc5f241d2f1a6256}} 
+\index{MeshLoader::Camera@{MeshLoader::Camera}!rotate\_x@{rotate\_x}}
+\index{rotate\_x@{rotate\_x}!MeshLoader::Camera@{MeshLoader::Camera}}
+\doxysubsubsection{\texorpdfstring{rotate\_x()}{rotate\_x()}}
+{\footnotesize\ttfamily void Mesh\+Loader\+::\+Camera\+::rotate\+\_\+x (\begin{DoxyParamCaption}\item[{float}]{angle }\end{DoxyParamCaption})}
+
+
+
+Definition at line 31 of file Camera.\+cpp.
+
+\mbox{\Hypertarget{class_mesh_loader_1_1_camera_aa5b6232eec9cdb5b2f4269beecd95a2c}\label{class_mesh_loader_1_1_camera_aa5b6232eec9cdb5b2f4269beecd95a2c}} 
+\index{MeshLoader::Camera@{MeshLoader::Camera}!rotate\_y@{rotate\_y}}
+\index{rotate\_y@{rotate\_y}!MeshLoader::Camera@{MeshLoader::Camera}}
+\doxysubsubsection{\texorpdfstring{rotate\_y()}{rotate\_y()}}
+{\footnotesize\ttfamily void Mesh\+Loader\+::\+Camera\+::rotate\+\_\+y (\begin{DoxyParamCaption}\item[{float}]{angle }\end{DoxyParamCaption})}
+
+
+
+Definition at line 37 of file Camera.\+cpp.
+
+\mbox{\Hypertarget{class_mesh_loader_1_1_camera_a1d2f7a1c947567c1f31e081b2c586093}\label{class_mesh_loader_1_1_camera_a1d2f7a1c947567c1f31e081b2c586093}} 
+\index{MeshLoader::Camera@{MeshLoader::Camera}!rotate\_z@{rotate\_z}}
+\index{rotate\_z@{rotate\_z}!MeshLoader::Camera@{MeshLoader::Camera}}
+\doxysubsubsection{\texorpdfstring{rotate\_z()}{rotate\_z()}}
+{\footnotesize\ttfamily void Mesh\+Loader\+::\+Camera\+::rotate\+\_\+z (\begin{DoxyParamCaption}\item[{float}]{angle }\end{DoxyParamCaption})}
+
+
+
+Definition at line 43 of file Camera.\+cpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+code/headers/\mbox{\hyperlink{_camera_8hpp}{Camera.\+hpp}}\item 
+code/source/\mbox{\hyperlink{_camera_8cpp}{Camera.\+cpp}}\end{DoxyCompactItemize}

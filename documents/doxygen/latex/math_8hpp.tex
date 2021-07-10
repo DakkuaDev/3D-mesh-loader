@@ -1,0 +1,77 @@
+\hypertarget{math_8hpp}{}\doxysection{code/headers/math.hpp File Reference}
+\label{math_8hpp}\index{code/headers/math.hpp@{code/headers/math.hpp}}
+{\ttfamily \#include $<$glm/glm.\+hpp$>$}\newline
+{\ttfamily \#include $<$glm/gtc/type\+\_\+ptr.\+hpp$>$}\newline
+{\ttfamily \#include $<$glm/gtx/matrix\+\_\+decompose.\+hpp$>$}\newline
+{\ttfamily \#include $<$glm/gtc/matrix\+\_\+transform.\+hpp$>$}\newline
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \mbox{\hyperlink{namespace_mesh_loader}{Mesh\+Loader}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef glm\+::ivec2 \mbox{\hyperlink{namespace_mesh_loader_aa769fba63e85a6086b3823208d1db12f}{Mesh\+Loader\+::\+Vector2i}}
+\item 
+typedef glm\+::ivec3 \mbox{\hyperlink{namespace_mesh_loader_ac3ceb2198041b91c3cb10c3eb0fb6a56}{Mesh\+Loader\+::\+Vector3i}}
+\item 
+typedef glm\+::ivec4 \mbox{\hyperlink{namespace_mesh_loader_ae922cbe2ce1eb753c767e47e62fa2a1c}{Mesh\+Loader\+::\+Vector4i}}
+\item 
+typedef glm\+::fvec2 \mbox{\hyperlink{namespace_mesh_loader_a8c002e8095f0a0a0fa2f15ea79e3a1a9}{Mesh\+Loader\+::\+Vector2f}}
+\item 
+typedef glm\+::fvec3 \mbox{\hyperlink{namespace_mesh_loader_a15dc1a137f1266ca8b22b70b2a7e9cbb}{Mesh\+Loader\+::\+Vector3f}}
+\item 
+typedef glm\+::fvec4 \mbox{\hyperlink{namespace_mesh_loader_a35fb0fd3e1193e86af295610c4126c8a}{Mesh\+Loader\+::\+Vector4f}}
+\item 
+typedef glm\+::quat \mbox{\hyperlink{namespace_mesh_loader_a775df72c2c2d5f728f3db0fc3f2fd5a8}{Mesh\+Loader\+::\+Quaternion}}
+\item 
+typedef glm\+::mat2 \mbox{\hyperlink{namespace_mesh_loader_a10e52717bcb9fa63c1e18c7b22452aa8}{Mesh\+Loader\+::\+Matrix22}}
+\item 
+typedef glm\+::mat3 \mbox{\hyperlink{namespace_mesh_loader_abf71a43c5deac2561e0413a045f028c0}{Mesh\+Loader\+::\+Matrix33}}
+\item 
+typedef glm\+::mat4 \mbox{\hyperlink{namespace_mesh_loader_afd51723ae7110a285707f40c693d45ce}{Mesh\+Loader\+::\+Matrix44}}
+\item 
+typedef glm\+::ivec2 \mbox{\hyperlink{namespace_mesh_loader_afc8958fa77cf178e63b764a8414fcb83}{Mesh\+Loader\+::\+Point2i}}
+\item 
+typedef glm\+::ivec3 \mbox{\hyperlink{namespace_mesh_loader_adb156104fd0a05161f46c8de5015b290}{Mesh\+Loader\+::\+Point3i}}
+\item 
+typedef glm\+::ivec4 \mbox{\hyperlink{namespace_mesh_loader_a0f1ac7ffaa823e3cc18953bcee6b3082}{Mesh\+Loader\+::\+Point4i}}
+\item 
+typedef glm\+::fvec2 \mbox{\hyperlink{namespace_mesh_loader_af3e8edb0679e183577114ea123282aec}{Mesh\+Loader\+::\+Point2f}}
+\item 
+typedef glm\+::fvec3 \mbox{\hyperlink{namespace_mesh_loader_a6dbb83df40647273e80b3a68ba51d875}{Mesh\+Loader\+::\+Point3f}}
+\item 
+typedef glm\+::fvec4 \mbox{\hyperlink{namespace_mesh_loader_a0f708d532b71b299d428d12f6e6c398a}{Mesh\+Loader\+::\+Point4f}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$class CLASS $>$ }\\const float $\ast$ \mbox{\hyperlink{namespace_mesh_loader_af60420974655ee237cec78bce73e938d}{Mesh\+Loader\+::get\+\_\+values}} (const CLASS \&object)
+\item 
+Matrix44 \mbox{\hyperlink{namespace_mesh_loader_a0eb6ca0e757436bb703eec9f806f4eb9}{Mesh\+Loader\+::inverse}} (const Matrix44 \&matrix)
+\item 
+Matrix44 \mbox{\hyperlink{namespace_mesh_loader_a27dd762a84d428aafa282144ee9a1829}{Mesh\+Loader\+::transpose}} (const Matrix44 \&matrix)
+\item 
+Matrix44 \mbox{\hyperlink{namespace_mesh_loader_a30443e3af67326f86a989e31595bd9f8}{Mesh\+Loader\+::translate}} (const Matrix44 \&matrix, const Vector3f \&displacement)
+\item 
+Matrix44 \mbox{\hyperlink{namespace_mesh_loader_a330c3a34dc5afa5b6884e99799b40e76}{Mesh\+Loader\+::scale}} (const Matrix44 \&matrix, float scale)
+\item 
+Matrix44 \mbox{\hyperlink{namespace_mesh_loader_a65532b29b187beb28c105c4c354bb149}{Mesh\+Loader\+::scale}} (const Matrix44 \&matrix, float scale\+\_\+x, float scale\+\_\+y, float scale\+\_\+z)
+\item 
+Matrix44 \mbox{\hyperlink{namespace_mesh_loader_af6db9d34275cdad0126184a7ebbdc128}{Mesh\+Loader\+::rotate\+\_\+around\+\_\+x}} (const Matrix44 \&matrix, float angle)
+\item 
+Matrix44 \mbox{\hyperlink{namespace_mesh_loader_a5c57446a95acd1405b9f8fd906943dd7}{Mesh\+Loader\+::rotate\+\_\+around\+\_\+y}} (const Matrix44 \&matrix, float angle)
+\item 
+Matrix44 \mbox{\hyperlink{namespace_mesh_loader_a994a2562a60f1a49492556dbc92d2151}{Mesh\+Loader\+::rotate\+\_\+around\+\_\+z}} (const Matrix44 \&matrix, float angle)
+\item 
+Matrix44 \mbox{\hyperlink{namespace_mesh_loader_a223272287097ec3ceba60b4ccfb1d606}{Mesh\+Loader\+::perspective}} (float fov, float near\+\_\+d, float far\+\_\+d, float aspect\+\_\+ratio)
+\item 
+Vector2f \mbox{\hyperlink{namespace_mesh_loader_a95fd8f95390293a902a4716961ab3775}{Mesh\+Loader\+::extract\+\_\+translation}} (const Matrix33 \&transformation)
+\item 
+Vector3f \mbox{\hyperlink{namespace_mesh_loader_aa8cde573353a5034d56aa5e3247a4593}{Mesh\+Loader\+::extract\+\_\+translation}} (const Matrix44 \&transformation)
+\item 
+Quaternion \mbox{\hyperlink{namespace_mesh_loader_a2c55a5576cf868806a8ff74cd4b1af20}{Mesh\+Loader\+::extract\+\_\+rotation}} (const Matrix44 \&transformation)
+\item 
+Matrix44 \mbox{\hyperlink{namespace_mesh_loader_a475dc31cc92d03974bc89cee874544e3}{Mesh\+Loader\+::look\+\_\+at}} (const Point3f \&from, const Point3f \&to)
+\end{DoxyCompactItemize}
