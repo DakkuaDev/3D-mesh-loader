@@ -48,55 +48,61 @@ namespace MeshLoader
 
     int ClipPolygon::clip_view_rules(Point4i* vertices, int* first_index, int* last_index, Point4i* output, float a, float b, float c)
     {
-        int total_count_vertex = last_index - first_index;
-        int new_total_count = 0;
 
-        for (int* i = first_index; i < last_index; i++)
-        {
+        // NOT WORK
+         
+        
+        //int total_count_vertex = last_index - first_index;
+        //int new_total_count = 0;
 
-            Point4i cp1 = vertices[*i];
-            int k = *(i + 1);
+        //for (int* i = first_index; i < last_index; i++)
+        //{
 
-            if (i >= last_index - 1)
-                k = *first_index;
+        //    Point4i cp1 = vertices[*i];
+        //    int k = *(i + 1);
 
-            Point4i cp2 = vertices[k];
+        //    if (i >= last_index - 1)
+        //        k = *first_index;
 
-            float wx = cp2.x - cp1.x;
-            float wy = cp2.y - cp1.y;
-            float wz = cp2.z - cp1.z;
+        //    Point4i cp2 = vertices[k];
 
-            float t = (-a * cp1.x - b * cp1.y - c) / (a * wx + b * wy);
+        //    float wx = cp2.x - cp1.x;
+        //    float wy = cp2.y - cp1.y;
+        //    float wz = cp2.z - cp1.z;
 
-            // Intersección
-            int new_vertex[4] = { cp1.x + wx * t , cp1.y + wy * t  , cp1.z + wz * t, 1 };
-            Point4i inters = { new_vertex[0], new_vertex[1], new_vertex[2], new_vertex[3] };
+        //    float t = (-a * cp1.x - b * cp1.y - c) / (a * wx + b * wy);
 
-            // Caso 1: Ambos vértices están dentro
-            if (inside(a, b, c, cp1.x, cp1.y) && inside(a, b, c, cp2.x, cp2.y)) {
-                output[new_total_count++] = cp2;
-            }
+        //    // Intersección
+        //    float new_vertex[4] = { cp1.x + wx * t , cp1.y + wy * t  , cp1.z + wz * t, 1 };
+        //    Point4i inters = { new_vertex[0], new_vertex[1], new_vertex[2], new_vertex[3] };
 
-            // Caso 2: El primer vértice está fuera mientras que el segundo está adentro
-            else if (!inside(a, b, c, cp1.x, cp1.y) && inside(a, b, c, cp2.x, cp2.y))
-            {
-                output[new_total_count++] = inters;
-                output[new_total_count++] = cp2;
-            }
+        //    // Caso 1: Ambos vértices están dentro
+        //    if (inside(a, b, c, cp1.x, cp1.y) && inside(a, b, c, cp2.x, cp2.y)) {
+        //        output[new_total_count++] = cp2;
+        //    }
 
-            // Caso 3: El primer vértice está dentro mientras que el segundo está fuera
-            else if (inside(a, b, c, cp1.x, cp1.y) && !inside(a, b, c, cp2.x, cp2.y))
-                output[new_total_count++] = inters;
+        //    // Caso 2: El primer vértice está fuera mientras que el segundo está adentro
+        //    else if (!inside(a, b, c, cp1.x, cp1.y) && inside(a, b, c, cp2.x, cp2.y))
+        //    {
+        //        output[new_total_count++] = inters;
+        //        output[new_total_count++] = cp2;
+        //    }
 
-            // Caso 4: Ambos vértices están fuera
-            else if (!inside(a, b, c, cp1.x, cp1.y) && !inside(a, b, c, cp2.x, cp2.y)) {}
+        //    // Caso 3: El primer vértice está dentro mientras que el segundo está fuera
+        //    else if (inside(a, b, c, cp1.x, cp1.y) && !inside(a, b, c, cp2.x, cp2.y))
+        //        output[new_total_count++] = inters;
 
-        }
-        return new_total_count;
+        //    // Caso 4: Ambos vértices están fuera
+        //    else if (!inside(a, b, c, cp1.x, cp1.y) && !inside(a, b, c, cp2.x, cp2.y)) {}
+
+        //}
+        //return new_total_count;
+
+        return 0;
     }
 
     bool ClipPolygon::inside(float a, float b, float c, float vertexX, float vertexY)
     {
-        return ((a * vertexX + b * vertexY + c) >= 0);
+        return ((a * vertexX + b * vertexY + c) >= 0);      
     }
 }

@@ -47,7 +47,7 @@
             Camera* camera;
             ClipPolygon* clip_polygon;
 
-            static constexpr char mesh_file_path[] = "../../shared/assets/scene_composition.obj";
+            static constexpr char mesh_file_path[] = "../../binaries/assets/scene_composition.obj";
 
             Color_Buffer               color_buffer;
             Rasterizer< Color_Buffer > rasterizer;

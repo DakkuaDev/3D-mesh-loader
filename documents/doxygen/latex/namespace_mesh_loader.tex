@@ -1,0 +1,390 @@
+\hypertarget{namespace_mesh_loader}{}\doxysection{Mesh\+Loader Namespace Reference}
+\label{namespace_mesh_loader}\index{MeshLoader@{MeshLoader}}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_mesh_loader_1_1_camera}{Camera}}
+\item 
+class \mbox{\hyperlink{class_mesh_loader_1_1_clip_polygon}{Clip\+Polygon}}
+\item 
+class \mbox{\hyperlink{class_mesh_loader_1_1_entity_trasform}{Entity\+Trasform}}
+\item 
+class \mbox{\hyperlink{class_mesh_loader_1_1_light}{Light}}
+\item 
+class \mbox{\hyperlink{class_mesh_loader_1_1_rasterizer}{Rasterizer}}
+\item 
+class \mbox{\hyperlink{class_mesh_loader_1_1_view}{View}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef glm\+::ivec2 \mbox{\hyperlink{namespace_mesh_loader_aa769fba63e85a6086b3823208d1db12f}{Vector2i}}
+\item 
+typedef glm\+::ivec3 \mbox{\hyperlink{namespace_mesh_loader_ac3ceb2198041b91c3cb10c3eb0fb6a56}{Vector3i}}
+\item 
+typedef glm\+::ivec4 \mbox{\hyperlink{namespace_mesh_loader_ae922cbe2ce1eb753c767e47e62fa2a1c}{Vector4i}}
+\item 
+typedef glm\+::fvec2 \mbox{\hyperlink{namespace_mesh_loader_a8c002e8095f0a0a0fa2f15ea79e3a1a9}{Vector2f}}
+\item 
+typedef glm\+::fvec3 \mbox{\hyperlink{namespace_mesh_loader_a15dc1a137f1266ca8b22b70b2a7e9cbb}{Vector3f}}
+\item 
+typedef glm\+::fvec4 \mbox{\hyperlink{namespace_mesh_loader_a35fb0fd3e1193e86af295610c4126c8a}{Vector4f}}
+\item 
+typedef glm\+::quat \mbox{\hyperlink{namespace_mesh_loader_a775df72c2c2d5f728f3db0fc3f2fd5a8}{Quaternion}}
+\item 
+typedef glm\+::mat2 \mbox{\hyperlink{namespace_mesh_loader_a10e52717bcb9fa63c1e18c7b22452aa8}{Matrix22}}
+\item 
+typedef glm\+::mat3 \mbox{\hyperlink{namespace_mesh_loader_abf71a43c5deac2561e0413a045f028c0}{Matrix33}}
+\item 
+typedef glm\+::mat4 \mbox{\hyperlink{namespace_mesh_loader_afd51723ae7110a285707f40c693d45ce}{Matrix44}}
+\item 
+typedef glm\+::ivec2 \mbox{\hyperlink{namespace_mesh_loader_afc8958fa77cf178e63b764a8414fcb83}{Point2i}}
+\item 
+typedef glm\+::ivec3 \mbox{\hyperlink{namespace_mesh_loader_adb156104fd0a05161f46c8de5015b290}{Point3i}}
+\item 
+typedef glm\+::ivec4 \mbox{\hyperlink{namespace_mesh_loader_a0f1ac7ffaa823e3cc18953bcee6b3082}{Point4i}}
+\item 
+typedef glm\+::fvec2 \mbox{\hyperlink{namespace_mesh_loader_af3e8edb0679e183577114ea123282aec}{Point2f}}
+\item 
+typedef glm\+::fvec3 \mbox{\hyperlink{namespace_mesh_loader_a6dbb83df40647273e80b3a68ba51d875}{Point3f}}
+\item 
+typedef glm\+::fvec4 \mbox{\hyperlink{namespace_mesh_loader_a0f708d532b71b299d428d12f6e6c398a}{Point4f}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$class CLASS $>$ }\\const float $\ast$ \mbox{\hyperlink{namespace_mesh_loader_af60420974655ee237cec78bce73e938d}{get\+\_\+values}} (const CLASS \&object)
+\item 
+\mbox{\hyperlink{namespace_mesh_loader_afd51723ae7110a285707f40c693d45ce}{Matrix44}} \mbox{\hyperlink{namespace_mesh_loader_a0eb6ca0e757436bb703eec9f806f4eb9}{inverse}} (const \mbox{\hyperlink{namespace_mesh_loader_afd51723ae7110a285707f40c693d45ce}{Matrix44}} \&matrix)
+\item 
+\mbox{\hyperlink{namespace_mesh_loader_afd51723ae7110a285707f40c693d45ce}{Matrix44}} \mbox{\hyperlink{namespace_mesh_loader_a27dd762a84d428aafa282144ee9a1829}{transpose}} (const \mbox{\hyperlink{namespace_mesh_loader_afd51723ae7110a285707f40c693d45ce}{Matrix44}} \&matrix)
+\item 
+\mbox{\hyperlink{namespace_mesh_loader_afd51723ae7110a285707f40c693d45ce}{Matrix44}} \mbox{\hyperlink{namespace_mesh_loader_a30443e3af67326f86a989e31595bd9f8}{translate}} (const \mbox{\hyperlink{namespace_mesh_loader_afd51723ae7110a285707f40c693d45ce}{Matrix44}} \&matrix, const \mbox{\hyperlink{namespace_mesh_loader_a15dc1a137f1266ca8b22b70b2a7e9cbb}{Vector3f}} \&displacement)
+\item 
+\mbox{\hyperlink{namespace_mesh_loader_afd51723ae7110a285707f40c693d45ce}{Matrix44}} \mbox{\hyperlink{namespace_mesh_loader_a330c3a34dc5afa5b6884e99799b40e76}{scale}} (const \mbox{\hyperlink{namespace_mesh_loader_afd51723ae7110a285707f40c693d45ce}{Matrix44}} \&matrix, float scale)
+\item 
+\mbox{\hyperlink{namespace_mesh_loader_afd51723ae7110a285707f40c693d45ce}{Matrix44}} \mbox{\hyperlink{namespace_mesh_loader_a65532b29b187beb28c105c4c354bb149}{scale}} (const \mbox{\hyperlink{namespace_mesh_loader_afd51723ae7110a285707f40c693d45ce}{Matrix44}} \&matrix, float scale\+\_\+x, float scale\+\_\+y, float scale\+\_\+z)
+\item 
+\mbox{\hyperlink{namespace_mesh_loader_afd51723ae7110a285707f40c693d45ce}{Matrix44}} \mbox{\hyperlink{namespace_mesh_loader_af6db9d34275cdad0126184a7ebbdc128}{rotate\+\_\+around\+\_\+x}} (const \mbox{\hyperlink{namespace_mesh_loader_afd51723ae7110a285707f40c693d45ce}{Matrix44}} \&matrix, float angle)
+\item 
+\mbox{\hyperlink{namespace_mesh_loader_afd51723ae7110a285707f40c693d45ce}{Matrix44}} \mbox{\hyperlink{namespace_mesh_loader_a5c57446a95acd1405b9f8fd906943dd7}{rotate\+\_\+around\+\_\+y}} (const \mbox{\hyperlink{namespace_mesh_loader_afd51723ae7110a285707f40c693d45ce}{Matrix44}} \&matrix, float angle)
+\item 
+\mbox{\hyperlink{namespace_mesh_loader_afd51723ae7110a285707f40c693d45ce}{Matrix44}} \mbox{\hyperlink{namespace_mesh_loader_a994a2562a60f1a49492556dbc92d2151}{rotate\+\_\+around\+\_\+z}} (const \mbox{\hyperlink{namespace_mesh_loader_afd51723ae7110a285707f40c693d45ce}{Matrix44}} \&matrix, float angle)
+\item 
+\mbox{\hyperlink{namespace_mesh_loader_afd51723ae7110a285707f40c693d45ce}{Matrix44}} \mbox{\hyperlink{namespace_mesh_loader_a223272287097ec3ceba60b4ccfb1d606}{perspective}} (float fov, float near\+\_\+d, float far\+\_\+d, float aspect\+\_\+ratio)
+\item 
+\mbox{\hyperlink{namespace_mesh_loader_a8c002e8095f0a0a0fa2f15ea79e3a1a9}{Vector2f}} \mbox{\hyperlink{namespace_mesh_loader_a95fd8f95390293a902a4716961ab3775}{extract\+\_\+translation}} (const \mbox{\hyperlink{namespace_mesh_loader_abf71a43c5deac2561e0413a045f028c0}{Matrix33}} \&transformation)
+\item 
+\mbox{\hyperlink{namespace_mesh_loader_a15dc1a137f1266ca8b22b70b2a7e9cbb}{Vector3f}} \mbox{\hyperlink{namespace_mesh_loader_aa8cde573353a5034d56aa5e3247a4593}{extract\+\_\+translation}} (const \mbox{\hyperlink{namespace_mesh_loader_afd51723ae7110a285707f40c693d45ce}{Matrix44}} \&transformation)
+\item 
+\mbox{\hyperlink{namespace_mesh_loader_a775df72c2c2d5f728f3db0fc3f2fd5a8}{Quaternion}} \mbox{\hyperlink{namespace_mesh_loader_a2c55a5576cf868806a8ff74cd4b1af20}{extract\+\_\+rotation}} (const \mbox{\hyperlink{namespace_mesh_loader_afd51723ae7110a285707f40c693d45ce}{Matrix44}} \&transformation)
+\item 
+\mbox{\hyperlink{namespace_mesh_loader_afd51723ae7110a285707f40c693d45ce}{Matrix44}} \mbox{\hyperlink{namespace_mesh_loader_a475dc31cc92d03974bc89cee874544e3}{look\+\_\+at}} (const \mbox{\hyperlink{namespace_mesh_loader_a6dbb83df40647273e80b3a68ba51d875}{Point3f}} \&from, const \mbox{\hyperlink{namespace_mesh_loader_a6dbb83df40647273e80b3a68ba51d875}{Point3f}} \&to)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{namespace_mesh_loader_a10e52717bcb9fa63c1e18c7b22452aa8}\label{namespace_mesh_loader_a10e52717bcb9fa63c1e18c7b22452aa8}} 
+\index{MeshLoader@{MeshLoader}!Matrix22@{Matrix22}}
+\index{Matrix22@{Matrix22}!MeshLoader@{MeshLoader}}
+\doxysubsubsection{\texorpdfstring{Matrix22}{Matrix22}}
+{\footnotesize\ttfamily typedef glm\+::mat2 \mbox{\hyperlink{namespace_mesh_loader_a10e52717bcb9fa63c1e18c7b22452aa8}{Mesh\+Loader\+::\+Matrix22}}}
+
+
+
+Definition at line 29 of file math.\+hpp.
+
+\mbox{\Hypertarget{namespace_mesh_loader_abf71a43c5deac2561e0413a045f028c0}\label{namespace_mesh_loader_abf71a43c5deac2561e0413a045f028c0}} 
+\index{MeshLoader@{MeshLoader}!Matrix33@{Matrix33}}
+\index{Matrix33@{Matrix33}!MeshLoader@{MeshLoader}}
+\doxysubsubsection{\texorpdfstring{Matrix33}{Matrix33}}
+{\footnotesize\ttfamily typedef glm\+::mat3 \mbox{\hyperlink{namespace_mesh_loader_abf71a43c5deac2561e0413a045f028c0}{Mesh\+Loader\+::\+Matrix33}}}
+
+
+
+Definition at line 30 of file math.\+hpp.
+
+\mbox{\Hypertarget{namespace_mesh_loader_afd51723ae7110a285707f40c693d45ce}\label{namespace_mesh_loader_afd51723ae7110a285707f40c693d45ce}} 
+\index{MeshLoader@{MeshLoader}!Matrix44@{Matrix44}}
+\index{Matrix44@{Matrix44}!MeshLoader@{MeshLoader}}
+\doxysubsubsection{\texorpdfstring{Matrix44}{Matrix44}}
+{\footnotesize\ttfamily typedef glm\+::mat4 \mbox{\hyperlink{namespace_mesh_loader_afd51723ae7110a285707f40c693d45ce}{Mesh\+Loader\+::\+Matrix44}}}
+
+
+
+Definition at line 31 of file math.\+hpp.
+
+\mbox{\Hypertarget{namespace_mesh_loader_af3e8edb0679e183577114ea123282aec}\label{namespace_mesh_loader_af3e8edb0679e183577114ea123282aec}} 
+\index{MeshLoader@{MeshLoader}!Point2f@{Point2f}}
+\index{Point2f@{Point2f}!MeshLoader@{MeshLoader}}
+\doxysubsubsection{\texorpdfstring{Point2f}{Point2f}}
+{\footnotesize\ttfamily typedef glm\+::fvec2 \mbox{\hyperlink{namespace_mesh_loader_af3e8edb0679e183577114ea123282aec}{Mesh\+Loader\+::\+Point2f}}}
+
+
+
+Definition at line 37 of file math.\+hpp.
+
+\mbox{\Hypertarget{namespace_mesh_loader_afc8958fa77cf178e63b764a8414fcb83}\label{namespace_mesh_loader_afc8958fa77cf178e63b764a8414fcb83}} 
+\index{MeshLoader@{MeshLoader}!Point2i@{Point2i}}
+\index{Point2i@{Point2i}!MeshLoader@{MeshLoader}}
+\doxysubsubsection{\texorpdfstring{Point2i}{Point2i}}
+{\footnotesize\ttfamily typedef glm\+::ivec2 \mbox{\hyperlink{namespace_mesh_loader_afc8958fa77cf178e63b764a8414fcb83}{Mesh\+Loader\+::\+Point2i}}}
+
+
+
+Definition at line 33 of file math.\+hpp.
+
+\mbox{\Hypertarget{namespace_mesh_loader_a6dbb83df40647273e80b3a68ba51d875}\label{namespace_mesh_loader_a6dbb83df40647273e80b3a68ba51d875}} 
+\index{MeshLoader@{MeshLoader}!Point3f@{Point3f}}
+\index{Point3f@{Point3f}!MeshLoader@{MeshLoader}}
+\doxysubsubsection{\texorpdfstring{Point3f}{Point3f}}
+{\footnotesize\ttfamily typedef glm\+::fvec3 \mbox{\hyperlink{namespace_mesh_loader_a6dbb83df40647273e80b3a68ba51d875}{Mesh\+Loader\+::\+Point3f}}}
+
+
+
+Definition at line 38 of file math.\+hpp.
+
+\mbox{\Hypertarget{namespace_mesh_loader_adb156104fd0a05161f46c8de5015b290}\label{namespace_mesh_loader_adb156104fd0a05161f46c8de5015b290}} 
+\index{MeshLoader@{MeshLoader}!Point3i@{Point3i}}
+\index{Point3i@{Point3i}!MeshLoader@{MeshLoader}}
+\doxysubsubsection{\texorpdfstring{Point3i}{Point3i}}
+{\footnotesize\ttfamily typedef glm\+::ivec3 \mbox{\hyperlink{namespace_mesh_loader_adb156104fd0a05161f46c8de5015b290}{Mesh\+Loader\+::\+Point3i}}}
+
+
+
+Definition at line 34 of file math.\+hpp.
+
+\mbox{\Hypertarget{namespace_mesh_loader_a0f708d532b71b299d428d12f6e6c398a}\label{namespace_mesh_loader_a0f708d532b71b299d428d12f6e6c398a}} 
+\index{MeshLoader@{MeshLoader}!Point4f@{Point4f}}
+\index{Point4f@{Point4f}!MeshLoader@{MeshLoader}}
+\doxysubsubsection{\texorpdfstring{Point4f}{Point4f}}
+{\footnotesize\ttfamily typedef glm\+::fvec4 \mbox{\hyperlink{namespace_mesh_loader_a0f708d532b71b299d428d12f6e6c398a}{Mesh\+Loader\+::\+Point4f}}}
+
+
+
+Definition at line 39 of file math.\+hpp.
+
+\mbox{\Hypertarget{namespace_mesh_loader_a0f1ac7ffaa823e3cc18953bcee6b3082}\label{namespace_mesh_loader_a0f1ac7ffaa823e3cc18953bcee6b3082}} 
+\index{MeshLoader@{MeshLoader}!Point4i@{Point4i}}
+\index{Point4i@{Point4i}!MeshLoader@{MeshLoader}}
+\doxysubsubsection{\texorpdfstring{Point4i}{Point4i}}
+{\footnotesize\ttfamily typedef glm\+::ivec4 \mbox{\hyperlink{namespace_mesh_loader_a0f1ac7ffaa823e3cc18953bcee6b3082}{Mesh\+Loader\+::\+Point4i}}}
+
+
+
+Definition at line 35 of file math.\+hpp.
+
+\mbox{\Hypertarget{namespace_mesh_loader_a775df72c2c2d5f728f3db0fc3f2fd5a8}\label{namespace_mesh_loader_a775df72c2c2d5f728f3db0fc3f2fd5a8}} 
+\index{MeshLoader@{MeshLoader}!Quaternion@{Quaternion}}
+\index{Quaternion@{Quaternion}!MeshLoader@{MeshLoader}}
+\doxysubsubsection{\texorpdfstring{Quaternion}{Quaternion}}
+{\footnotesize\ttfamily typedef glm\+::quat \mbox{\hyperlink{namespace_mesh_loader_a775df72c2c2d5f728f3db0fc3f2fd5a8}{Mesh\+Loader\+::\+Quaternion}}}
+
+
+
+Definition at line 27 of file math.\+hpp.
+
+\mbox{\Hypertarget{namespace_mesh_loader_a8c002e8095f0a0a0fa2f15ea79e3a1a9}\label{namespace_mesh_loader_a8c002e8095f0a0a0fa2f15ea79e3a1a9}} 
+\index{MeshLoader@{MeshLoader}!Vector2f@{Vector2f}}
+\index{Vector2f@{Vector2f}!MeshLoader@{MeshLoader}}
+\doxysubsubsection{\texorpdfstring{Vector2f}{Vector2f}}
+{\footnotesize\ttfamily typedef glm\+::fvec2 \mbox{\hyperlink{namespace_mesh_loader_a8c002e8095f0a0a0fa2f15ea79e3a1a9}{Mesh\+Loader\+::\+Vector2f}}}
+
+
+
+Definition at line 23 of file math.\+hpp.
+
+\mbox{\Hypertarget{namespace_mesh_loader_aa769fba63e85a6086b3823208d1db12f}\label{namespace_mesh_loader_aa769fba63e85a6086b3823208d1db12f}} 
+\index{MeshLoader@{MeshLoader}!Vector2i@{Vector2i}}
+\index{Vector2i@{Vector2i}!MeshLoader@{MeshLoader}}
+\doxysubsubsection{\texorpdfstring{Vector2i}{Vector2i}}
+{\footnotesize\ttfamily typedef glm\+::ivec2 \mbox{\hyperlink{namespace_mesh_loader_aa769fba63e85a6086b3823208d1db12f}{Mesh\+Loader\+::\+Vector2i}}}
+
+
+
+Definition at line 19 of file math.\+hpp.
+
+\mbox{\Hypertarget{namespace_mesh_loader_a15dc1a137f1266ca8b22b70b2a7e9cbb}\label{namespace_mesh_loader_a15dc1a137f1266ca8b22b70b2a7e9cbb}} 
+\index{MeshLoader@{MeshLoader}!Vector3f@{Vector3f}}
+\index{Vector3f@{Vector3f}!MeshLoader@{MeshLoader}}
+\doxysubsubsection{\texorpdfstring{Vector3f}{Vector3f}}
+{\footnotesize\ttfamily typedef glm\+::fvec3 \mbox{\hyperlink{namespace_mesh_loader_a15dc1a137f1266ca8b22b70b2a7e9cbb}{Mesh\+Loader\+::\+Vector3f}}}
+
+
+
+Definition at line 24 of file math.\+hpp.
+
+\mbox{\Hypertarget{namespace_mesh_loader_ac3ceb2198041b91c3cb10c3eb0fb6a56}\label{namespace_mesh_loader_ac3ceb2198041b91c3cb10c3eb0fb6a56}} 
+\index{MeshLoader@{MeshLoader}!Vector3i@{Vector3i}}
+\index{Vector3i@{Vector3i}!MeshLoader@{MeshLoader}}
+\doxysubsubsection{\texorpdfstring{Vector3i}{Vector3i}}
+{\footnotesize\ttfamily typedef glm\+::ivec3 \mbox{\hyperlink{namespace_mesh_loader_ac3ceb2198041b91c3cb10c3eb0fb6a56}{Mesh\+Loader\+::\+Vector3i}}}
+
+
+
+Definition at line 20 of file math.\+hpp.
+
+\mbox{\Hypertarget{namespace_mesh_loader_a35fb0fd3e1193e86af295610c4126c8a}\label{namespace_mesh_loader_a35fb0fd3e1193e86af295610c4126c8a}} 
+\index{MeshLoader@{MeshLoader}!Vector4f@{Vector4f}}
+\index{Vector4f@{Vector4f}!MeshLoader@{MeshLoader}}
+\doxysubsubsection{\texorpdfstring{Vector4f}{Vector4f}}
+{\footnotesize\ttfamily typedef glm\+::fvec4 \mbox{\hyperlink{namespace_mesh_loader_a35fb0fd3e1193e86af295610c4126c8a}{Mesh\+Loader\+::\+Vector4f}}}
+
+
+
+Definition at line 25 of file math.\+hpp.
+
+\mbox{\Hypertarget{namespace_mesh_loader_ae922cbe2ce1eb753c767e47e62fa2a1c}\label{namespace_mesh_loader_ae922cbe2ce1eb753c767e47e62fa2a1c}} 
+\index{MeshLoader@{MeshLoader}!Vector4i@{Vector4i}}
+\index{Vector4i@{Vector4i}!MeshLoader@{MeshLoader}}
+\doxysubsubsection{\texorpdfstring{Vector4i}{Vector4i}}
+{\footnotesize\ttfamily typedef glm\+::ivec4 \mbox{\hyperlink{namespace_mesh_loader_ae922cbe2ce1eb753c767e47e62fa2a1c}{Mesh\+Loader\+::\+Vector4i}}}
+
+
+
+Definition at line 21 of file math.\+hpp.
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{namespace_mesh_loader_a2c55a5576cf868806a8ff74cd4b1af20}\label{namespace_mesh_loader_a2c55a5576cf868806a8ff74cd4b1af20}} 
+\index{MeshLoader@{MeshLoader}!extract\_rotation@{extract\_rotation}}
+\index{extract\_rotation@{extract\_rotation}!MeshLoader@{MeshLoader}}
+\doxysubsubsection{\texorpdfstring{extract\_rotation()}{extract\_rotation()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespace_mesh_loader_a775df72c2c2d5f728f3db0fc3f2fd5a8}{Quaternion}} Mesh\+Loader\+::extract\+\_\+rotation (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{namespace_mesh_loader_afd51723ae7110a285707f40c693d45ce}{Matrix44}} \&}]{transformation }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 104 of file math.\+hpp.
+
+\mbox{\Hypertarget{namespace_mesh_loader_a95fd8f95390293a902a4716961ab3775}\label{namespace_mesh_loader_a95fd8f95390293a902a4716961ab3775}} 
+\index{MeshLoader@{MeshLoader}!extract\_translation@{extract\_translation}}
+\index{extract\_translation@{extract\_translation}!MeshLoader@{MeshLoader}}
+\doxysubsubsection{\texorpdfstring{extract\_translation()}{extract\_translation()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespace_mesh_loader_a8c002e8095f0a0a0fa2f15ea79e3a1a9}{Vector2f}} Mesh\+Loader\+::extract\+\_\+translation (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{namespace_mesh_loader_abf71a43c5deac2561e0413a045f028c0}{Matrix33}} \&}]{transformation }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 92 of file math.\+hpp.
+
+\mbox{\Hypertarget{namespace_mesh_loader_aa8cde573353a5034d56aa5e3247a4593}\label{namespace_mesh_loader_aa8cde573353a5034d56aa5e3247a4593}} 
+\index{MeshLoader@{MeshLoader}!extract\_translation@{extract\_translation}}
+\index{extract\_translation@{extract\_translation}!MeshLoader@{MeshLoader}}
+\doxysubsubsection{\texorpdfstring{extract\_translation()}{extract\_translation()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespace_mesh_loader_a15dc1a137f1266ca8b22b70b2a7e9cbb}{Vector3f}} Mesh\+Loader\+::extract\+\_\+translation (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{namespace_mesh_loader_afd51723ae7110a285707f40c693d45ce}{Matrix44}} \&}]{transformation }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 98 of file math.\+hpp.
+
+\mbox{\Hypertarget{namespace_mesh_loader_af60420974655ee237cec78bce73e938d}\label{namespace_mesh_loader_af60420974655ee237cec78bce73e938d}} 
+\index{MeshLoader@{MeshLoader}!get\_values@{get\_values}}
+\index{get\_values@{get\_values}!MeshLoader@{MeshLoader}}
+\doxysubsubsection{\texorpdfstring{get\_values()}{get\_values()}}
+{\footnotesize\ttfamily template$<$class CLASS $>$ \\
+const float$\ast$ Mesh\+Loader\+::get\+\_\+values (\begin{DoxyParamCaption}\item[{const CLASS \&}]{object }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 42 of file math.\+hpp.
+
+\mbox{\Hypertarget{namespace_mesh_loader_a0eb6ca0e757436bb703eec9f806f4eb9}\label{namespace_mesh_loader_a0eb6ca0e757436bb703eec9f806f4eb9}} 
+\index{MeshLoader@{MeshLoader}!inverse@{inverse}}
+\index{inverse@{inverse}!MeshLoader@{MeshLoader}}
+\doxysubsubsection{\texorpdfstring{inverse()}{inverse()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespace_mesh_loader_afd51723ae7110a285707f40c693d45ce}{Matrix44}} Mesh\+Loader\+::inverse (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{namespace_mesh_loader_afd51723ae7110a285707f40c693d45ce}{Matrix44}} \&}]{matrix }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 47 of file math.\+hpp.
+
+\mbox{\Hypertarget{namespace_mesh_loader_a475dc31cc92d03974bc89cee874544e3}\label{namespace_mesh_loader_a475dc31cc92d03974bc89cee874544e3}} 
+\index{MeshLoader@{MeshLoader}!look\_at@{look\_at}}
+\index{look\_at@{look\_at}!MeshLoader@{MeshLoader}}
+\doxysubsubsection{\texorpdfstring{look\_at()}{look\_at()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespace_mesh_loader_afd51723ae7110a285707f40c693d45ce}{Matrix44}} Mesh\+Loader\+::look\+\_\+at (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{namespace_mesh_loader_a6dbb83df40647273e80b3a68ba51d875}{Point3f}} \&}]{from,  }\item[{const \mbox{\hyperlink{namespace_mesh_loader_a6dbb83df40647273e80b3a68ba51d875}{Point3f}} \&}]{to }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 117 of file math.\+hpp.
+
+\mbox{\Hypertarget{namespace_mesh_loader_a223272287097ec3ceba60b4ccfb1d606}\label{namespace_mesh_loader_a223272287097ec3ceba60b4ccfb1d606}} 
+\index{MeshLoader@{MeshLoader}!perspective@{perspective}}
+\index{perspective@{perspective}!MeshLoader@{MeshLoader}}
+\doxysubsubsection{\texorpdfstring{perspective()}{perspective()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespace_mesh_loader_afd51723ae7110a285707f40c693d45ce}{Matrix44}} Mesh\+Loader\+::perspective (\begin{DoxyParamCaption}\item[{float}]{fov,  }\item[{float}]{near\+\_\+d,  }\item[{float}]{far\+\_\+d,  }\item[{float}]{aspect\+\_\+ratio }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 87 of file math.\+hpp.
+
+\mbox{\Hypertarget{namespace_mesh_loader_af6db9d34275cdad0126184a7ebbdc128}\label{namespace_mesh_loader_af6db9d34275cdad0126184a7ebbdc128}} 
+\index{MeshLoader@{MeshLoader}!rotate\_around\_x@{rotate\_around\_x}}
+\index{rotate\_around\_x@{rotate\_around\_x}!MeshLoader@{MeshLoader}}
+\doxysubsubsection{\texorpdfstring{rotate\_around\_x()}{rotate\_around\_x()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespace_mesh_loader_afd51723ae7110a285707f40c693d45ce}{Matrix44}} Mesh\+Loader\+::rotate\+\_\+around\+\_\+x (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{namespace_mesh_loader_afd51723ae7110a285707f40c693d45ce}{Matrix44}} \&}]{matrix,  }\item[{float}]{angle }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 72 of file math.\+hpp.
+
+\mbox{\Hypertarget{namespace_mesh_loader_a5c57446a95acd1405b9f8fd906943dd7}\label{namespace_mesh_loader_a5c57446a95acd1405b9f8fd906943dd7}} 
+\index{MeshLoader@{MeshLoader}!rotate\_around\_y@{rotate\_around\_y}}
+\index{rotate\_around\_y@{rotate\_around\_y}!MeshLoader@{MeshLoader}}
+\doxysubsubsection{\texorpdfstring{rotate\_around\_y()}{rotate\_around\_y()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespace_mesh_loader_afd51723ae7110a285707f40c693d45ce}{Matrix44}} Mesh\+Loader\+::rotate\+\_\+around\+\_\+y (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{namespace_mesh_loader_afd51723ae7110a285707f40c693d45ce}{Matrix44}} \&}]{matrix,  }\item[{float}]{angle }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 77 of file math.\+hpp.
+
+\mbox{\Hypertarget{namespace_mesh_loader_a994a2562a60f1a49492556dbc92d2151}\label{namespace_mesh_loader_a994a2562a60f1a49492556dbc92d2151}} 
+\index{MeshLoader@{MeshLoader}!rotate\_around\_z@{rotate\_around\_z}}
+\index{rotate\_around\_z@{rotate\_around\_z}!MeshLoader@{MeshLoader}}
+\doxysubsubsection{\texorpdfstring{rotate\_around\_z()}{rotate\_around\_z()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespace_mesh_loader_afd51723ae7110a285707f40c693d45ce}{Matrix44}} Mesh\+Loader\+::rotate\+\_\+around\+\_\+z (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{namespace_mesh_loader_afd51723ae7110a285707f40c693d45ce}{Matrix44}} \&}]{matrix,  }\item[{float}]{angle }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 82 of file math.\+hpp.
+
+\mbox{\Hypertarget{namespace_mesh_loader_a330c3a34dc5afa5b6884e99799b40e76}\label{namespace_mesh_loader_a330c3a34dc5afa5b6884e99799b40e76}} 
+\index{MeshLoader@{MeshLoader}!scale@{scale}}
+\index{scale@{scale}!MeshLoader@{MeshLoader}}
+\doxysubsubsection{\texorpdfstring{scale()}{scale()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespace_mesh_loader_afd51723ae7110a285707f40c693d45ce}{Matrix44}} Mesh\+Loader\+::scale (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{namespace_mesh_loader_afd51723ae7110a285707f40c693d45ce}{Matrix44}} \&}]{matrix,  }\item[{float}]{scale }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 62 of file math.\+hpp.
+
+\mbox{\Hypertarget{namespace_mesh_loader_a65532b29b187beb28c105c4c354bb149}\label{namespace_mesh_loader_a65532b29b187beb28c105c4c354bb149}} 
+\index{MeshLoader@{MeshLoader}!scale@{scale}}
+\index{scale@{scale}!MeshLoader@{MeshLoader}}
+\doxysubsubsection{\texorpdfstring{scale()}{scale()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespace_mesh_loader_afd51723ae7110a285707f40c693d45ce}{Matrix44}} Mesh\+Loader\+::scale (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{namespace_mesh_loader_afd51723ae7110a285707f40c693d45ce}{Matrix44}} \&}]{matrix,  }\item[{float}]{scale\+\_\+x,  }\item[{float}]{scale\+\_\+y,  }\item[{float}]{scale\+\_\+z }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 67 of file math.\+hpp.
+
+\mbox{\Hypertarget{namespace_mesh_loader_a30443e3af67326f86a989e31595bd9f8}\label{namespace_mesh_loader_a30443e3af67326f86a989e31595bd9f8}} 
+\index{MeshLoader@{MeshLoader}!translate@{translate}}
+\index{translate@{translate}!MeshLoader@{MeshLoader}}
+\doxysubsubsection{\texorpdfstring{translate()}{translate()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespace_mesh_loader_afd51723ae7110a285707f40c693d45ce}{Matrix44}} Mesh\+Loader\+::translate (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{namespace_mesh_loader_afd51723ae7110a285707f40c693d45ce}{Matrix44}} \&}]{matrix,  }\item[{const \mbox{\hyperlink{namespace_mesh_loader_a15dc1a137f1266ca8b22b70b2a7e9cbb}{Vector3f}} \&}]{displacement }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 57 of file math.\+hpp.
+
+\mbox{\Hypertarget{namespace_mesh_loader_a27dd762a84d428aafa282144ee9a1829}\label{namespace_mesh_loader_a27dd762a84d428aafa282144ee9a1829}} 
+\index{MeshLoader@{MeshLoader}!transpose@{transpose}}
+\index{transpose@{transpose}!MeshLoader@{MeshLoader}}
+\doxysubsubsection{\texorpdfstring{transpose()}{transpose()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespace_mesh_loader_afd51723ae7110a285707f40c693d45ce}{Matrix44}} Mesh\+Loader\+::transpose (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{namespace_mesh_loader_afd51723ae7110a285707f40c693d45ce}{Matrix44}} \&}]{matrix }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 52 of file math.\+hpp.
+

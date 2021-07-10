@@ -1,0 +1,136 @@
+\hypertarget{class_mesh_loader_1_1_view}{}\doxysection{Mesh\+Loader\+::View Class Reference}
+\label{class_mesh_loader_1_1_view}\index{MeshLoader::View@{MeshLoader::View}}
+
+
+{\ttfamily \#include $<$View.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_mesh_loader_1_1_view_a7459c7bb25d26363290f00a9b8f2d222}{View}} (unsigned width, unsigned height, bool bake\+\_\+scene=true)
+\item 
+void \mbox{\hyperlink{class_mesh_loader_1_1_view_a79f7d796315a9a1f1dd589e6d3d41b15}{update}} (float delta)
+\item 
+void \mbox{\hyperlink{class_mesh_loader_1_1_view_af0cc21f7b3fd043080cdddbddf40286f}{render}} ()
+\item 
+\mbox{\hyperlink{class_mesh_loader_1_1_rasterizer}{Rasterizer}}$<$ Color\+\_\+\+Buffer $>$ \mbox{\hyperlink{class_mesh_loader_1_1_view_aff9b23c2be5defc85bde5cc0b9d08a7a}{get\+\_\+rasterizer}} ()
+\item 
+\mbox{\hyperlink{class_mesh_loader_1_1_camera}{Camera}} $\ast$ \mbox{\hyperlink{class_mesh_loader_1_1_view_ac4d5f8a3856b0b13728ca87c14c4f19c}{get\+\_\+camera}} ()
+\item 
+unsigned \mbox{\hyperlink{class_mesh_loader_1_1_view_a0832adb4e9280d9efbf58e26adb6687e}{get\+\_\+width}} ()
+\item 
+unsigned \mbox{\hyperlink{class_mesh_loader_1_1_view_a40c14d71b57f6eb8c6acdbfa7db00655}{get\+\_\+height}} ()
+\item 
+bool \mbox{\hyperlink{class_mesh_loader_1_1_view_a66b76cc4ada1d96b92f6864d96457300}{get\+\_\+bake}} ()
+\item 
+void \mbox{\hyperlink{class_mesh_loader_1_1_view_a4e058cccb69344335ab6fc2fb6d34437}{set\+\_\+bake}} (bool is\+\_\+bake)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line 32 of file View.\+hpp.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_mesh_loader_1_1_view_a7459c7bb25d26363290f00a9b8f2d222}\label{class_mesh_loader_1_1_view_a7459c7bb25d26363290f00a9b8f2d222}} 
+\index{MeshLoader::View@{MeshLoader::View}!View@{View}}
+\index{View@{View}!MeshLoader::View@{MeshLoader::View}}
+\doxysubsubsection{\texorpdfstring{View()}{View()}}
+{\footnotesize\ttfamily Mesh\+Loader\+::\+View\+::\+View (\begin{DoxyParamCaption}\item[{unsigned}]{width,  }\item[{unsigned}]{height,  }\item[{bool}]{bake\+\_\+scene = {\ttfamily true} }\end{DoxyParamCaption})}
+
+
+
+Definition at line 21 of file View.\+cpp.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_mesh_loader_1_1_view_a66b76cc4ada1d96b92f6864d96457300}\label{class_mesh_loader_1_1_view_a66b76cc4ada1d96b92f6864d96457300}} 
+\index{MeshLoader::View@{MeshLoader::View}!get\_bake@{get\_bake}}
+\index{get\_bake@{get\_bake}!MeshLoader::View@{MeshLoader::View}}
+\doxysubsubsection{\texorpdfstring{get\_bake()}{get\_bake()}}
+{\footnotesize\ttfamily bool Mesh\+Loader\+::\+View\+::get\+\_\+bake (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 94 of file View.\+hpp.
+
+\mbox{\Hypertarget{class_mesh_loader_1_1_view_ac4d5f8a3856b0b13728ca87c14c4f19c}\label{class_mesh_loader_1_1_view_ac4d5f8a3856b0b13728ca87c14c4f19c}} 
+\index{MeshLoader::View@{MeshLoader::View}!get\_camera@{get\_camera}}
+\index{get\_camera@{get\_camera}!MeshLoader::View@{MeshLoader::View}}
+\doxysubsubsection{\texorpdfstring{get\_camera()}{get\_camera()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_mesh_loader_1_1_camera}{Camera}}$\ast$ Mesh\+Loader\+::\+View\+::get\+\_\+camera (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 90 of file View.\+hpp.
+
+\mbox{\Hypertarget{class_mesh_loader_1_1_view_a40c14d71b57f6eb8c6acdbfa7db00655}\label{class_mesh_loader_1_1_view_a40c14d71b57f6eb8c6acdbfa7db00655}} 
+\index{MeshLoader::View@{MeshLoader::View}!get\_height@{get\_height}}
+\index{get\_height@{get\_height}!MeshLoader::View@{MeshLoader::View}}
+\doxysubsubsection{\texorpdfstring{get\_height()}{get\_height()}}
+{\footnotesize\ttfamily unsigned Mesh\+Loader\+::\+View\+::get\+\_\+height (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 92 of file View.\+hpp.
+
+\mbox{\Hypertarget{class_mesh_loader_1_1_view_aff9b23c2be5defc85bde5cc0b9d08a7a}\label{class_mesh_loader_1_1_view_aff9b23c2be5defc85bde5cc0b9d08a7a}} 
+\index{MeshLoader::View@{MeshLoader::View}!get\_rasterizer@{get\_rasterizer}}
+\index{get\_rasterizer@{get\_rasterizer}!MeshLoader::View@{MeshLoader::View}}
+\doxysubsubsection{\texorpdfstring{get\_rasterizer()}{get\_rasterizer()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_mesh_loader_1_1_rasterizer}{Rasterizer}}$<$ Color\+\_\+\+Buffer $>$ Mesh\+Loader\+::\+View\+::get\+\_\+rasterizer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 89 of file View.\+hpp.
+
+\mbox{\Hypertarget{class_mesh_loader_1_1_view_a0832adb4e9280d9efbf58e26adb6687e}\label{class_mesh_loader_1_1_view_a0832adb4e9280d9efbf58e26adb6687e}} 
+\index{MeshLoader::View@{MeshLoader::View}!get\_width@{get\_width}}
+\index{get\_width@{get\_width}!MeshLoader::View@{MeshLoader::View}}
+\doxysubsubsection{\texorpdfstring{get\_width()}{get\_width()}}
+{\footnotesize\ttfamily unsigned Mesh\+Loader\+::\+View\+::get\+\_\+width (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 91 of file View.\+hpp.
+
+\mbox{\Hypertarget{class_mesh_loader_1_1_view_af0cc21f7b3fd043080cdddbddf40286f}\label{class_mesh_loader_1_1_view_af0cc21f7b3fd043080cdddbddf40286f}} 
+\index{MeshLoader::View@{MeshLoader::View}!render@{render}}
+\index{render@{render}!MeshLoader::View@{MeshLoader::View}}
+\doxysubsubsection{\texorpdfstring{render()}{render()}}
+{\footnotesize\ttfamily void Mesh\+Loader\+::\+View\+::render (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 199 of file View.\+cpp.
+
+\mbox{\Hypertarget{class_mesh_loader_1_1_view_a4e058cccb69344335ab6fc2fb6d34437}\label{class_mesh_loader_1_1_view_a4e058cccb69344335ab6fc2fb6d34437}} 
+\index{MeshLoader::View@{MeshLoader::View}!set\_bake@{set\_bake}}
+\index{set\_bake@{set\_bake}!MeshLoader::View@{MeshLoader::View}}
+\doxysubsubsection{\texorpdfstring{set\_bake()}{set\_bake()}}
+{\footnotesize\ttfamily void Mesh\+Loader\+::\+View\+::set\+\_\+bake (\begin{DoxyParamCaption}\item[{bool}]{is\+\_\+bake }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 95 of file View.\+hpp.
+
+\mbox{\Hypertarget{class_mesh_loader_1_1_view_a79f7d796315a9a1f1dd589e6d3d41b15}\label{class_mesh_loader_1_1_view_a79f7d796315a9a1f1dd589e6d3d41b15}} 
+\index{MeshLoader::View@{MeshLoader::View}!update@{update}}
+\index{update@{update}!MeshLoader::View@{MeshLoader::View}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void Mesh\+Loader\+::\+View\+::update (\begin{DoxyParamCaption}\item[{float}]{delta }\end{DoxyParamCaption})}
+
+
+
+Definition at line 130 of file View.\+cpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+code/headers/\mbox{\hyperlink{_view_8hpp}{View.\+hpp}}\item 
+code/source/\mbox{\hyperlink{_view_8cpp}{View.\+cpp}}\end{DoxyCompactItemize}
