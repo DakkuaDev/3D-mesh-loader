@@ -84,17 +84,21 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\code\headers\Camera.hpp" />
+    <ClInclude Include="..\..\code\headers\ClipPolygon.hpp" />
+    <ClInclude Include="..\..\code\headers\EntityTrasform.hpp" />
+    <ClInclude Include="..\..\code\headers\Light.hpp" />
     <ClInclude Include="..\..\code\headers\math.hpp" />
-    <ClInclude Include="..\..\code\headers\Mesh.hpp" />
-    <ClInclude Include="..\..\code\headers\Model.hpp" />
     <ClInclude Include="..\..\code\headers\Rasterizer.hpp" />
-    <ClInclude Include="..\..\code\headers\Scene.hpp" />
+    <ClInclude Include="..\..\code\headers\View.hpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\code\source\Camera.cpp" />
+    <ClCompile Include="..\..\code\source\ClipPolygon.cpp" />
+    <ClCompile Include="..\..\code\source\EntityTrasform.cpp" />
+    <ClCompile Include="..\..\code\source\Light.cpp" />
     <ClCompile Include="..\..\code\source\main.cpp" />
-    <ClCompile Include="..\..\code\source\Mesh.cpp" />
-    <ClCompile Include="..\..\code\source\Model.cpp" />
-    <ClCompile Include="..\..\code\source\Scene.cpp" />
+    <ClCompile Include="..\..\code\source\View.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

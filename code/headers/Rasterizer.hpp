@@ -1,7 +1,8 @@
 /*
 * @Author: Daniel Guerra Gallardo
-* @Description: Programa de renderizado 3D de mayas poligonales
-* @Date: 06/2021
+* @Date: 07/2021
+* @Description: 3D mesh loader exercise
+* daniel.guerra.gallardo99@gmail.com
 */
 
 #ifndef RASTERIZER_HEADER
@@ -13,7 +14,7 @@
     #include <limits>
     #include "math.hpp"
 
-    namespace MeshLoaderExercise
+    namespace MeshLoader
     {
 
         template< class COLOR_BUFFER_TYPE >

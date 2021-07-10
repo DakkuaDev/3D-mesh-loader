@@ -1,7 +1,8 @@
 /*
 * @Author: Daniel Guerra Gallardo
-* @Description: Programa de renderizado 3D de mayas poligonales
-* @Date: 06/2021
+* @Date: 07/2021
+* @Description: 3D mesh loader exercise
+* daniel.guerra.gallardo99@gmail.com
 */
 
 #ifndef MATH_HEADER
@@ -12,7 +13,7 @@
     #include <glm/gtx/matrix_decompose.hpp>
     #include <glm/gtc/matrix_transform.hpp>
 
-    namespace MeshLoaderExercise
+    namespace MeshLoader
     {
 
         typedef glm::ivec2 Vector2i;
