@@ -29,7 +29,10 @@ namespace MeshLoader
 		// Posición de la luz
 		vec4 position;
 
-		//Intensidad ambiental (luz indirecta) 
+		// Luz Ambiental
+		float ambient = 0.35f;
+
+		//Intensidad
 		vec3 Ia = vec3(1.f, 1.f, 1.f);
 
 		// Constante de reflectividad en superficie ambiental (0.0f - 1.0f)

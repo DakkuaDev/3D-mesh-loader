@@ -25,7 +25,7 @@ namespace MeshLoader
 	Vector3f Light::calculate_light(Vector3f normal)
 	{
 
-		// Iluminación Ambiental ( Iam = ka * Ia )
+		// Iluminación de Lanbert ( Iam = ka * Ia )
 		vec3 Iam = vec3(ka * Ia.x, ka * Ia.y, ka * Ia.z);
 
 		float normalize_value_a = sqrt(pow(Iam.x, 2) + pow(Iam.y, 2) + pow(Iam.z, 2));
@@ -41,7 +41,7 @@ namespace MeshLoader
 		Idiff.y /= normalize_value_b;
 		Idiff.z /= normalize_value_b;
 		
-		auto result_light = Iam * Idiff;
+		auto result_light = Iam * (Idiff + ambient);
 
 		return result_light;
 	}
