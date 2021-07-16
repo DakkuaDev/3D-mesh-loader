@@ -9,7 +9,7 @@ Small demo scene using a mesh loading library, Assimp, together with  for graphi
 - Lighting (Ambient + Diffuse
 - Entities
 
-![image](https://user-images.githubusercontent.com/61831013/125994072-53480a82-5f0e-4386-8ab2-f4e1c9beb4be.png)
+![image](https://user-images.githubusercontent.com/61831013/125996529-4f7d8bd7-fb72-49b7-9cb5-771cf26bb1d0.png)
 
 Author: Daniel Guerra Gallardo
 
