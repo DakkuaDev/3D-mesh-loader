@@ -5,7 +5,7 @@ Small demo scene using a mesh loading library, Assimp, together with  for graphi
 
 # Modules:
 - Scenario with 3D low-poly assets
-- free camera
+- Camera with movement
 - Lighting (Ambient + Diffuse
 - Entities
 
